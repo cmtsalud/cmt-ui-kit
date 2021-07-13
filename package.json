@@ -14,5 +14,16 @@
   ],
   "author": "Medulab",
   "license": "MIT",
-  "preferGlobal": true
+  "preferGlobal": true,
+  "bin": {
+    "cmt-ui-kit": "global.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Histamina/cmt-ui-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Histamina/cmt-ui-kit/issues"
+  },
+  "homepage": "https://github.com/Histamina/cmt-ui-kit#readme"
 }
