@@ -1,0 +1,18 @@
+{
+  "name": "cmt-ui-kit",
+  "version": "1.0.0",
+  "description": "cmt user interface kit",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "react",
+    "node",
+    "npm"
+  ],
+  "author": "Medulab",
+  "license": "MIT",
+  "preferGlobal": true
+}
