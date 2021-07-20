@@ -1,0 +1,64 @@
+/* Navbar with logo and buttons*/
+.cmt-header.ant-layout-header {
+   width: 100%;
+   height: 64px;
+   background-color: @white;
+   box-shadow: 5px 1px 30px -19px;
+
+   .logo {
+      line-height: 64px;
+      float: left;
+      img {
+         width: 90px;
+         height: 32px;
+      }
+   }
+
+   .ant-menu {
+      float: right;
+      height: inherit;
+      .ant-menu-item {
+         border-bottom: none !important;
+         a {
+            font-family: 'MarkPro';
+            font-size: 14px;
+            color: @text-color-secondary;
+            &:hover {
+               color: @primary-color;
+               border-bottom: none !important;
+            }
+         }
+
+         &.ant-menu-item-selected {
+            a {
+               color: @primary-color;
+            }
+         }
+      }
+
+      .ant-menu-submenu {
+         border-bottom: none !important;
+         .ant-menu-item-group {
+            .ant-menu-item-group-list > li.ant-menu-item-active {
+               font-family: 'MarkPro';
+               color: @text-color-secondary;
+               font-size: 14px;
+               &:hover {
+                  color: @primary-color;
+               }
+            }
+         }
+
+      }
+
+      .ant-menu-submenu-active {
+         color: @primary-color;
+         .ant-menu-submenu-title {
+            &:hover {
+               color: @primary-color;
+            }
+         }
+      }
+
+   }
+}
