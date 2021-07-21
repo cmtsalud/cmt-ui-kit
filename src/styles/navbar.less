@@ -8,6 +8,7 @@
    .logo {
       line-height: 64px;
       float: left;
+      margin-right: 15px;
       img {
          width: 90px;
          height: 32px;
@@ -15,49 +16,33 @@
    }
 
    .ant-menu {
-      float: right;
       height: inherit;
       .ant-menu-item {
-         border-bottom: none !important;
+         border-bottom: none;
          a {
             font-family: 'MarkPro';
             font-size: 14px;
-            color: @text-color-secondary !important;
+            color: @text-color-secondary;
             &:hover {
-               color: @primary-color !important;
-               border-bottom: none !important;
+               color: @primary-color;
             }
          }
 
          &.ant-menu-item-selected {
             a {
-               color: @primary-color !important;
-            }
-         }
-      }
-
-      .ant-menu-submenu {
-         border-bottom: none !important;
-         .ant-menu-item-group {
-            .ant-menu-item-group-list > li.ant-menu-item-active {
-               font-family: 'MarkPro';
-               color: @text-color-secondary;
-               font-size: 14px;
-               &:hover {
-                  color: @primary-color;
-               }
-            }
-         }
-
-      }
-
-      .ant-menu-submenu-active {
-         color: @primary-color;
-         .ant-menu-submenu-title {
-            &:hover {
                color: @primary-color;
             }
          }
+      }
+
+      &.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-open, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected {
+         color: @primary-color;
+         border-bottom: none;
+      }
+
+      &.ant-menu-item:hover, .ant-menu-item-active, .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-submenu-active, .ant-menu-submenu-title:hover {
+         color: @primary-color;
+         border-bottom: none;
       }
 
    }
