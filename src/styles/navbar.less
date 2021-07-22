@@ -8,15 +8,19 @@
    .logo {
       line-height: 64px;
       float: left;
-      margin-right: 15px;
-      img {
-         width: 90px;
-         height: 32px;
-      }
+      background-image: url("~cmt-ui-kit/src/images/CMTlogoOrange.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 90px;
+      height: 30px;
+      margin-top: 17px;
+      margin-left: 10px;
    }
 
    .ant-menu {
       height: inherit;
+      float: right;
       .ant-menu-item {
          border-bottom: none;
          a {
@@ -45,5 +49,10 @@
          border-bottom: none;
       }
 
+   }
+
+   &.fixed {
+      position: fixed;
+      z-index: 1;
    }
 }
