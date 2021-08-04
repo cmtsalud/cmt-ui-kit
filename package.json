@@ -1,6 +1,6 @@
 {
   "name": "cmt-ui-kit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "cmt user interface kit",
   "main": "src/index.js",
   "scripts": {
@@ -15,9 +15,6 @@
   "author": "Medulab",
   "license": "MIT",
   "preferGlobal": true,
-  "bin": {
-    "cmt-ui-kit": "global.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Histamina/cmt-ui-kit.git"
@@ -25,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/Histamina/cmt-ui-kit/issues"
   },
-  "homepage": "https://github.com/Histamina/cmt-ui-kit#readme"
+  "homepage": "https://github.com/Histamina/cmt-ui-kit#readme",
+  "dependencies": {
+    "less": "^4.1.1",
+    "yarn": "^1.22.10"
+  }
 }
