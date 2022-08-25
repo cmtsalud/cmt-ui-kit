@@ -1,1 +1,1 @@
-console.log('hola');
+export { default as Document } from "components/document";
