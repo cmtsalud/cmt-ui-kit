@@ -1,1 +1,1 @@
-export { default as Document } from "components/document";
+export { default as DocumentCard } from "components/documentCard";

@@ -5,12 +5,12 @@ import '../styles/document.less';
 
 const { Option } = Select;
 
-export default Document = ({
+export default ({
   countryCode,
-  documentType,
   setDocumentType,
+  handleOnDocumentNumberBlur,
   form,
-  handleOnDocumentNumberBlur
+  classNameStyle
 }) => {
   const documentTypeChile = [
     { text: 'Rut', value: 'rut' },
@@ -25,10 +25,11 @@ export default Document = ({
   const placeholderInput = () => {
     let result = '';
     if (countryCode === 'PE') {
-      result = documentType === 'dni' ? 'Número de dni' : 'Número de pasaporte';
+      result = form.getFieldValue('documentType') && form.getFieldValue('documentType').toLowerCase() === 'dni' ? 'Número de dni' : 'Número de pasaporte';
     } else {
-      result = documentType === 'rut' ? 'Número de Rut + DV' : 'Número de pasaporte';
+      result = form.getFieldValue('documentType') && form.getFieldValue('documentType').toLowerCase() === 'rut' ? 'Número de Rut + DV' : 'Número de pasaporte';
     }
+    debugger;
     return result;
   }
 
@@ -37,9 +38,9 @@ export default Document = ({
     form.setFieldsValue({ documentNumber: null });
   };
 
-  const handleDocumentNumber = async (event) => {
+  const handleDocumentNumber = (event) => {
     let inputValue = event.target.value;
-    if (documentType === 'rut') {
+    if (form.getFieldValue('documentType') && form.getFieldValue('documentType').toLowerCase() === 'rut') {
       form.setFieldsValue({ documentNumber: format(inputValue) });
     } else {
       form.setFieldsValue({ documentNumber: inputValue });
@@ -50,19 +51,19 @@ export default Document = ({
   const validateNumber = ({ getFieldValue }) => ({
     validator(_, value) {
       if (value && value.length > 6) {
-        if (getFieldValue('documentType') === 'rut') {
+        if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'rut') {
           const cleanRut = clean(value)
           if (validate(cleanRut)) {
             return Promise.resolve();
           } else {
             return Promise.reject(new Error('Rut inválido'));
           }
-        } else if (getFieldValue('documentType') === 'ruc') {
+        } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'ruc') {
           let ruc = value;
           if (!(ruc >= 1e10 && ruc < 11e9
             || ruc >= 15e9 && ruc < 18e9
             || ruc >= 2e10 && ruc < 21e9))
-            return false;
+            return Promise.reject(new Error('Ruc inválido'));
           for (var suma = -(ruc % 10 < 2), i = 0; i < 11; i++, ruc = ruc / 10 | 0)
             suma += (ruc % 10) * (i % 7 + (i / 7 | 0) + 1);
           if (suma % 11 === 0) {
@@ -70,7 +71,7 @@ export default Document = ({
           } else {
             return Promise.reject(new Error('Ruc inválido'));
           }
-        } else if (getFieldValue('documentType') === 'dni' && value.includes('-')) {
+        } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'dni' && value.includes('-')) {
           const dni = value.split('-')[0];
           const cchar = value.split('-')[1];
           const numberKeys = [6, 7, 8, 9, 0, 1, 1, 2, 3, 4, 5];
@@ -102,12 +103,10 @@ export default Document = ({
         <Form.Item
           name="documentType"
           className="mb-0"
-          initialValue={documentType}
         >
           <Select
-            className='cmt-select'
+            className={'cmt-select ' + classNameStyle}
             placeholder='Seleccione tipo de documento'
-            id='documentType'
             onChange={handleDocumentType}
           >
             {countryCode === 'PE' ?
@@ -133,7 +132,6 @@ export default Document = ({
       <Col xs={24} sm={14}>
         <Form.Item
           name="documentNumber"
-          onChange={handleDocumentNumber}
           rules={[
             {
               required: true,
@@ -144,10 +142,10 @@ export default Document = ({
           className="mb-0"
         >
           <Input
-            className='cmt-input'
-            onBlur={handleOnDocumentNumberBlur}
+            className={'cmt-input ' + classNameStyle}
             placeholder={placeholderInput()}
-            id='documentNumber'
+            onChange={handleDocumentNumber}
+            onBlur={handleOnDocumentNumberBlur}
           />
         </Form.Item>
       </Col>
