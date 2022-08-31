@@ -29,7 +29,6 @@ export default ({
     } else {
       result = form.getFieldValue('documentType') && form.getFieldValue('documentType').toLowerCase() === 'rut' ? 'Número de Rut + DV' : 'Número de pasaporte';
     }
-    debugger;
     return result;
   }
 

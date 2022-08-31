@@ -5,21 +5,21 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var React = require('react');
 var antd = require('antd');
 
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+function _interopDefaultLegacy(e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
 var _require = require('rut.js'),
-    validate = _require.validate,
-    format = _require.format,
-    clean = _require.clean;
+  validate = _require.validate,
+  format = _require.format,
+  clean = _require.clean;
 var Option = antd.Select.Option;
 var documentCard = (function (_ref) {
   var countryCode = _ref.countryCode,
-      setDocumentType = _ref.setDocumentType,
-      handleOnDocumentNumberBlur = _ref.handleOnDocumentNumberBlur,
-      form = _ref.form,
-      classNameStyle = _ref.classNameStyle;
+    setDocumentType = _ref.setDocumentType,
+    handleOnDocumentNumberBlur = _ref.handleOnDocumentNumberBlur,
+    form = _ref.form,
+    classNameStyle = _ref.classNameStyle;
   var documentTypeChile = [{
     text: 'Rut',
     value: 'rut'
@@ -46,8 +46,6 @@ var documentCard = (function (_ref) {
     } else {
       result = form.getFieldValue('documentType') && form.getFieldValue('documentType').toLowerCase() === 'rut' ? 'Número de Rut + DV' : 'Número de pasaporte';
     }
-
-    debugger;
     return result;
   };
 
