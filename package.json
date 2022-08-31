@@ -52,6 +52,7 @@
     "babel-plugin-module-resolver": "^4.1.0"
   },
   "files": [
-    "/dist"
+    "/dist",
+    "/src"
   ]
 }
