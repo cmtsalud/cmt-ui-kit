@@ -22,6 +22,7 @@ export default [
       resolve(),
       commonjs(),
       less({
+        insert: true,
         output: './dist/style.css'
       })
     ]

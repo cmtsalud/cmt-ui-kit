@@ -1,25 +1,47 @@
 'use strict';
 
+
+
+function __$styleInject(css) {
+    if (!css) return;
+
+    if (typeof window == 'undefined') return;
+    var style = document.createElement('style');
+    style.setAttribute('media', 'screen');
+
+    style.innerHTML = css;
+    document.head.appendChild(style);
+    return css;
+}
+
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
 var antd = require('antd');
+var parsePhoneNumber = require('libphonenumber-js');
+var PhoneInput = require('react-phone-input-2');
+var es = require('react-phone-input-2/lang/es.json');
 
-function _interopDefaultLegacy(e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var parsePhoneNumber__default = /*#__PURE__*/_interopDefaultLegacy(parsePhoneNumber);
+var PhoneInput__default = /*#__PURE__*/_interopDefaultLegacy(PhoneInput);
+var es__default = /*#__PURE__*/_interopDefaultLegacy(es);
+
+__$styleInject("/* Colors */\n@font-face {\n  font-family: 'MarkPro';\n  src: url('~cmt-ui-kit/src/fonts/MarkPro/MarkPro.woff') format('woff'), url('~cmt-ui-kit/src/fonts/MarkPro/MarkPro.woff2') format('woff2');\n  font-weight: normal;\n  font-size: normal;\n  font-display: swap;\n}\n@font-face {\n  font-family: 'MarkProBold';\n  src: url('~cmt-ui-kit/src/fonts/MarkProBold/MarkPro-Bold.woff') format('woff'), url('~cmt-ui-kit/src/fonts/MarkProBold/MarkPro-Bold.woff2') format('woff2');\n  font-weight: bold;\n  font-size: normal;\n  font-display: swap;\n}\n@font-face {\n  font-family: 'fontello';\n  src: url('~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.eot?12700268');\n  src: url('~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.eot?12700268#iefix') format('embedded-opentype'), url('~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.woff2?12700268') format('woff2'), url('~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.woff?12700268') format('woff'), url('~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.ttf?12700268') format('truetype'), url('~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.svg?12700268#fontello') format('svg');\n  font-weight: normal;\n  font-style: normal;\n}\n[class^=\"icon-\"]:before,\n[class*=\" icon-\"]:before {\n  font-family: \"fontello\" !important;\n  font-style: normal;\n  font-weight: normal;\n  speak: never;\n  display: inline-block;\n  text-decoration: inherit;\n  width: 1em;\n  margin-right: 0.2em;\n  text-align: center;\n  /* For safety - reset parent styles, that can break glyph codes*/\n  font-variant: normal;\n  text-transform: none;\n  /* fix buttons height, for twitter bootstrap */\n  line-height: 1em;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n/* System Icons */\n.icon-system-edit:before {\n  content: '\\e800';\n}\n.icon-system-calendar:before {\n  content: '\\e801';\n}\n.icon-system-clock:before {\n  content: '\\e802';\n}\n.icon-system-close:before {\n  content: '\\e803';\n}\n.icon-system-chevron-up:before {\n  content: '\\e81e';\n}\n.icon-system-chevron-right:before {\n  content: '\\e81a';\n}\n.icon-system-chevron-left:before {\n  content: '\\e812';\n}\n.icon-system-chevron-down:before {\n  content: '\\e807';\n}\n.icon-system-delete:before {\n  content: '\\e825';\n}\n.icon-system-placeholder:before {\n  content: '\\e817';\n}\n.icon-system-search:before {\n  content: '\\e81d';\n}\n.icon-system-mail:before {\n  content: '\\e814';\n}\n.icon-system-phone:before {\n  content: '\\e816';\n}\n.icon-system-plus:before {\n  content: '\\e818';\n}\n.icon-system-user:before {\n  content: '\\e820';\n}\n.icon-system-check:before {\n  content: '\\e830';\n}\n/* Brand Icons */\n.icon-brand-facebook:before {\n  content: '\\e80e';\n}\n.icon-brand-convenience:before {\n  content: '\\e804';\n}\n.icon-brand-covid:before {\n  content: '\\e805';\n}\n.icon-brand-checking-account:before {\n  content: '\\e806';\n}\n.icon-brand-efficiency:before {\n  content: '\\e808';\n}\n.icon-brand-field-exams:before {\n  content: '\\e80c';\n}\n.icon-brand-linkedin:before {\n  content: '\\e813';\n}\n.icon-brand-billing:before {\n  content: '\\e80f';\n}\n.icon-brand-innovation:before {\n  content: '\\e811';\n}\n.icon-brand-error-404:before {\n  content: '\\e809';\n}\n.icon-brand-error-500:before {\n  content: '\\e80a';\n}\n.icon-brand-services-experience:before {\n  content: '\\e80d';\n}\n.icon-brand-reservations:before {\n  content: '\\e815';\n}\n.icon-brand-online-reports:before {\n  content: '\\e819';\n}\n.icon-brand-basic-room:before {\n  content: '\\e81b';\n}\n.icon-brand-custom-room:before {\n  content: '\\e81c';\n}\n");
 
 var _require = require('rut.js'),
-  validate = _require.validate,
-  format = _require.format,
-  clean = _require.clean;
+    validate = _require.validate,
+    format = _require.format,
+    clean = _require.clean;
 var Option = antd.Select.Option;
 var documentCard = (function (_ref) {
   var countryCode = _ref.countryCode,
-    setDocumentType = _ref.setDocumentType,
-    handleOnDocumentNumberBlur = _ref.handleOnDocumentNumberBlur,
-    form = _ref.form,
-    classNameStyle = _ref.classNameStyle;
+      setDocumentType = _ref.setDocumentType,
+      handleOnDocumentNumberBlur = _ref.handleOnDocumentNumberBlur,
+      form = _ref.form,
+      classNameStyle = _ref.classNameStyle;
   var documentTypeChile = [{
     text: 'Rut',
     value: 'rut'
@@ -46,6 +68,7 @@ var documentCard = (function (_ref) {
     } else {
       result = form.getFieldValue('documentType') && form.getFieldValue('documentType').toLowerCase() === 'rut' ? 'Número de Rut + DV' : 'Número de pasaporte';
     }
+
     return result;
   };
 
@@ -166,4 +189,63 @@ var documentCard = (function (_ref) {
   }))));
 });
 
+__$styleInject("/* Colors */\n@font-face {\n  font-family: 'MarkPro';\n  src: url('~cmt-ui-kit/src/fonts/MarkPro/MarkPro.woff') format('woff'), url('~cmt-ui-kit/src/fonts/MarkPro/MarkPro.woff2') format('woff2');\n  font-weight: normal;\n  font-size: normal;\n  font-display: swap;\n}\n@font-face {\n  font-family: 'MarkProBold';\n  src: url('~cmt-ui-kit/src/fonts/MarkProBold/MarkPro-Bold.woff') format('woff'), url('~cmt-ui-kit/src/fonts/MarkProBold/MarkPro-Bold.woff2') format('woff2');\n  font-weight: bold;\n  font-size: normal;\n  font-display: swap;\n}\n@font-face {\n  font-family: 'fontello';\n  src: url('~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.eot?12700268');\n  src: url('~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.eot?12700268#iefix') format('embedded-opentype'), url('~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.woff2?12700268') format('woff2'), url('~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.woff?12700268') format('woff'), url('~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.ttf?12700268') format('truetype'), url('~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.svg?12700268#fontello') format('svg');\n  font-weight: normal;\n  font-style: normal;\n}\n[class^=\"icon-\"]:before,\n[class*=\" icon-\"]:before {\n  font-family: \"fontello\" !important;\n  font-style: normal;\n  font-weight: normal;\n  speak: never;\n  display: inline-block;\n  text-decoration: inherit;\n  width: 1em;\n  margin-right: 0.2em;\n  text-align: center;\n  /* For safety - reset parent styles, that can break glyph codes*/\n  font-variant: normal;\n  text-transform: none;\n  /* fix buttons height, for twitter bootstrap */\n  line-height: 1em;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n/* System Icons */\n.icon-system-edit:before {\n  content: '\\e800';\n}\n.icon-system-calendar:before {\n  content: '\\e801';\n}\n.icon-system-clock:before {\n  content: '\\e802';\n}\n.icon-system-close:before {\n  content: '\\e803';\n}\n.icon-system-chevron-up:before {\n  content: '\\e81e';\n}\n.icon-system-chevron-right:before {\n  content: '\\e81a';\n}\n.icon-system-chevron-left:before {\n  content: '\\e812';\n}\n.icon-system-chevron-down:before {\n  content: '\\e807';\n}\n.icon-system-delete:before {\n  content: '\\e825';\n}\n.icon-system-placeholder:before {\n  content: '\\e817';\n}\n.icon-system-search:before {\n  content: '\\e81d';\n}\n.icon-system-mail:before {\n  content: '\\e814';\n}\n.icon-system-phone:before {\n  content: '\\e816';\n}\n.icon-system-plus:before {\n  content: '\\e818';\n}\n.icon-system-user:before {\n  content: '\\e820';\n}\n.icon-system-check:before {\n  content: '\\e830';\n}\n/* Brand Icons */\n.icon-brand-facebook:before {\n  content: '\\e80e';\n}\n.icon-brand-convenience:before {\n  content: '\\e804';\n}\n.icon-brand-covid:before {\n  content: '\\e805';\n}\n.icon-brand-checking-account:before {\n  content: '\\e806';\n}\n.icon-brand-efficiency:before {\n  content: '\\e808';\n}\n.icon-brand-field-exams:before {\n  content: '\\e80c';\n}\n.icon-brand-linkedin:before {\n  content: '\\e813';\n}\n.icon-brand-billing:before {\n  content: '\\e80f';\n}\n.icon-brand-innovation:before {\n  content: '\\e811';\n}\n.icon-brand-error-404:before {\n  content: '\\e809';\n}\n.icon-brand-error-500:before {\n  content: '\\e80a';\n}\n.icon-brand-services-experience:before {\n  content: '\\e80d';\n}\n.icon-brand-reservations:before {\n  content: '\\e815';\n}\n.icon-brand-online-reports:before {\n  content: '\\e819';\n}\n.icon-brand-basic-room:before {\n  content: '\\e81b';\n}\n.icon-brand-custom-room:before {\n  content: '\\e81c';\n}\n.search-phone-class {\n  font-family: 'MarkPro';\n  font-size: 16px;\n  width: 100% !important;\n}\n.search-phone-class::placeholder {\n  color: #BEBEBE;\n}\n");
+
+var phone = (function (_ref) {
+  var countryCode = _ref.countryCode;
+      _ref.form;
+      _ref.classNameStyle;
+  var mostChosenCountries = ["cl", "ve", "pe", "co", "bo", "ec", "ht", "es", "ar", "br", "mx", "us", "cz", "fr", "cu", "cn", "do", "ca", "de", "pt", "at", "au", "ro", "py", "it", "nl", "pl", "gb", "uy"];
+  return /*#__PURE__*/React__default["default"].createElement(antd.Form.Item, {
+    name: "phone",
+    label: "Tel\xE9fono",
+    rules: [{
+      required: true,
+      message: 'Teléfono es requerido'
+    }, function (_ref2) {
+      _ref2.getFieldValue;
+      return {
+        validator: function validator(_, value) {
+          if (!value || value === '' || value.length <= 4) {
+            return Promise.resolve();
+          }
+
+          if (value && value.length > 4) {
+            var fieldValue = value;
+
+            if (!fieldValue.includes('+')) {
+              fieldValue = countryCode === 'PE' ? "+51".concat(fieldValue) : "+56".concat(fieldValue);
+            }
+
+            var parsedValue = parsePhoneNumber__default["default"](fieldValue);
+
+            if (parsedValue && parsedValue.isPossible()) {
+              return Promise.resolve();
+            }
+          }
+
+          return Promise.reject(new Error('Teléfono incorrecto. Revisa el prefijo y/o dígitos.'));
+        }
+      };
+    }]
+  }, /*#__PURE__*/React__default["default"].createElement(PhoneInput__default["default"], {
+    country: countryCode && countryCode.toLowerCase(),
+    id: "phone",
+    localization: es__default["default"],
+    preferredCountries: mostChosenCountries,
+    preserveOrder: ['preferredCountries'],
+    placeholder: "Ingrese n\xFAmero de tel\xE9fono",
+    enableSearch: true,
+    searchPlaceholder: "Buscar",
+    disableSearchIcon: true,
+    searchNotFound: "No hay resultados",
+    masks: {
+      'ar': '(...) ....-....'
+    },
+    prefix: "+",
+    inputClass: "search-phone-class"
+  }));
+});
+
 exports.DocumentCard = documentCard;
+exports.PhoneInput = phone;
