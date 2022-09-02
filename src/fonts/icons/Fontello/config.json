@@ -481,6 +481,20 @@
       "search": [
         "downloadicon"
       ]
+    },
+    {
+      "uid": "7fad6c97125829f50c07e9aecc07e652",
+      "css": "alert-icon-orange",
+      "code": 951344,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M536 596.4A20.8 20.8 0 1 1 515.2 575.6 21.4 21.4 0 0 1 536 596.4ZM526.4 540.2H503.8L499.8 381H530.4Z",
+        "width": 1029
+      },
+      "search": [
+        "alert-icon-orange"
+      ]
     }
   ]
 }
