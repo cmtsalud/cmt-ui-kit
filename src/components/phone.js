@@ -8,7 +8,8 @@ import '../styles/phone.less';
 export default ({
   countryCode,
   form,
-  classNameStyle
+  classNameStyle,
+  optional
 }) => {
 
   const mostChosenCountries = [
@@ -46,7 +47,7 @@ export default ({
   return (
     <Form.Item
       name="phone"
-      label="Teléfono"
+      label={optional ? 'Teléfono (opcional)' : 'Teléfono (opcional)'}
       rules={[
         {
           required: true,
@@ -67,7 +68,11 @@ export default ({
                 return Promise.resolve();
               }
             }
-            return Promise.reject(new Error('Teléfono incorrecto. Revisa el prefijo y/o dígitos.'));
+            if (!optional) {
+              return Promise.resolve();
+            } else {
+              return Promise.reject(new Error('Teléfono incorrecto. Revisa el prefijo y/o dígitos.'));
+            }
           }
         })
       ]}
