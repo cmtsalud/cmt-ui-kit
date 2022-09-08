@@ -7,9 +7,10 @@ import '../styles/phone.less';
 
 export default ({
   countryCode,
-  form,
-  classNameStyle,
-  optional
+  onChangePhone,
+  optional,
+  labelText,
+  formName
 }) => {
 
   const mostChosenCountries = [
@@ -46,11 +47,11 @@ export default ({
 
   return (
     <Form.Item
-      name="phone"
-      label={optional ? 'Teléfono (opcional)' : 'Teléfono (opcional)'}
+      name={formName ? formName : 'phone'}
+      label={labelText}
       rules={[
         {
-          required: true,
+          required: !optional,
           message: 'Teléfono es requerido'
         },
         ({ getFieldValue }) => ({
@@ -79,7 +80,7 @@ export default ({
     >
       <PhoneInput
         country={countryCode && countryCode.toLowerCase()}
-        id='phone'
+        id={formName ? formName : 'phone'}
         localization={es}
         preferredCountries={mostChosenCountries}
         preserveOrder={['preferredCountries']}
@@ -91,6 +92,7 @@ export default ({
         masks={{ 'ar': '(...) ....-....' }}
         prefix="+"
         inputClass="search-phone-class"
+        onChange={onChangePhone && onChangePhone}
       />
     </Form.Item>
   )
