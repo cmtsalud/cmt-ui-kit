@@ -25,9 +25,15 @@ export default ({
   const placeholderInput = () => {
     let result = '';
     if (countryCode === 'PE') {
-      result = form.getFieldValue('documentType') && form.getFieldValue('documentType').toLowerCase() === 'dni' ? 'Número de dni' : 'Número de pasaporte';
+      result = form.getFieldValue('documentType')
+        && form.getFieldValue('documentType').toLowerCase() === 'dni'
+        ? 'Número de dni'
+        : form.getFieldValue('documentType').toLowerCase() === 'ruc'
+          ? 'Número de RUC' : 'Número de pasaporte';
     } else {
-      result = form.getFieldValue('documentType') && form.getFieldValue('documentType').toLowerCase() === 'rut' ? 'Número de Rut + DV' : 'Número de pasaporte';
+      result = form.getFieldValue('documentType')
+        && form.getFieldValue('documentType').toLowerCase() === 'rut'
+        ? 'Número de Rut + DV' : 'Número de pasaporte';
     }
     return result;
   }
