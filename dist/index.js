@@ -62,7 +62,7 @@ var documentCard = (function (_ref) {
   var placeholderInput = function placeholderInput() {
     var result = '';
     if (countryCode === 'PE') {
-      result = form.getFieldValue('documentType') && form.getFieldValue('documentType').toLowerCase() === 'dni' ? 'Número de dni' : form.getFieldValue('documentType').toLowerCase() === 'ruc' ? 'Número de RUC' : 'Número de pasaporte';
+      result = form.getFieldValue('documentType') ? form.getFieldValue('documentType').toLowerCase() === 'dni' ? 'Número de dni' : form.getFieldValue('documentType').toLowerCase() === 'ruc' ? 'Número de RUC' : 'Número de pasaporte' : form.getFieldValue('documentType');
     } else {
       result = form.getFieldValue('documentType') && form.getFieldValue('documentType').toLowerCase() === 'rut' ? 'Número de Rut + DV' : 'Número de pasaporte';
     }
