@@ -198,8 +198,11 @@ var phone = (function (_ref) {
             return Promise.resolve();
           }
           if (value && value.length > 4) {
+            console.log(value);
             var fieldValue = value;
             if (!fieldValue.includes('+')) {
+              fieldValue = countryCode === 'PE' ? "+".concat(fieldValue) : "+".concat(fieldValue);
+            } else if (!fieldValue.includes(countryCode === 'PE' ? 51 : 56)) {
               fieldValue = countryCode === 'PE' ? "+51".concat(fieldValue) : "+56".concat(fieldValue);
             }
             var parsedValue = parsePhoneNumber__default["default"](fieldValue);

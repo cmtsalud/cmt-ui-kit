@@ -60,8 +60,11 @@ export default ({
               return Promise.resolve();
             }
             if (value && value.length > 4) {
+              console.log(value)
               let fieldValue = value;
               if (!fieldValue.includes('+')) {
+                fieldValue = countryCode === 'PE' ? `+${fieldValue}` : `+${fieldValue}`;
+              } else if (!fieldValue.includes(countryCode === 'PE' ? 51 : 56)) {
                 fieldValue = countryCode === 'PE' ? `+51${fieldValue}` : `+56${fieldValue}`;
               }
               let parsedValue = parsePhoneNumber(fieldValue);
