@@ -3,15 +3,15 @@
 
 
 function __$styleInject(css) {
-    if (!css) return;
+  if (!css) return;
 
-    if (typeof window == 'undefined') return;
-    var style = document.createElement('style');
-    style.setAttribute('media', 'screen');
+  if (typeof window == 'undefined') return;
+  var style = document.createElement('style');
+  style.setAttribute('media', 'screen');
 
-    style.innerHTML = css;
-    document.head.appendChild(style);
-    return css;
+  style.innerHTML = css;
+  document.head.appendChild(style);
+  return css;
 }
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -22,7 +22,7 @@ var parsePhoneNumber = require('libphonenumber-js');
 var PhoneInput = require('react-phone-input-2');
 var es = require('react-phone-input-2/lang/es.json');
 
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+function _interopDefaultLegacy(e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var parsePhoneNumber__default = /*#__PURE__*/_interopDefaultLegacy(parsePhoneNumber);
@@ -198,7 +198,6 @@ var phone = (function (_ref) {
             return Promise.resolve();
           }
           if (value && value.length > 4) {
-            console.log(value);
             var fieldValue = value;
             if (!fieldValue.includes('+')) {
               fieldValue = countryCode === 'PE' ? "+".concat(fieldValue) : "+".concat(fieldValue);

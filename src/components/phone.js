@@ -60,7 +60,6 @@ export default ({
               return Promise.resolve();
             }
             if (value && value.length > 4) {
-              console.log(value)
               let fieldValue = value;
               if (!fieldValue.includes('+')) {
                 fieldValue = countryCode === 'PE' ? `+${fieldValue}` : `+${fieldValue}`;
