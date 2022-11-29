@@ -1,58 +1,71 @@
 /* Navbar with logo and buttons*/
 .cmt-header.ant-layout-header {
-   width: 100%;
-   height: 64px;
-   background-color: @white;
-   box-shadow: 5px 1px 30px -19px;
+  width: 100%;
+  height: 64px;
+  background-color: @white;
+  box-shadow: 5px 1px 30px -19px;
 
-   .logo {
-      line-height: 64px;
-      float: left;
-      background-image: url("~cmt-ui-kit/src/images/CMTlogoOrange.svg");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      width: 90px;
-      height: 30px;
-      margin-top: 17px;
-      margin-left: 10px;
-   }
+  .logo {
+    line-height: 64px;
+    float: left;
+    background-image: url("~cmt-ui-kit/src/images/LogoCmtNaranjoCompleto.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 90px;
+    height: 30px;
+    margin-top: 17px;
+    margin-left: 10px;
+  }
 
-   .ant-menu {
-      height: inherit;
-      float: right;
-      .ant-menu-item {
-         border-bottom: none;
-         a {
-            font-family: 'MarkPro';
-            font-size: 14px;
-            color: @text-color-secondary;
-            &:hover {
-               color: @primary-color;
-            }
-         }
-
-         &.ant-menu-item-selected {
-            a {
-               color: @primary-color;
-            }
-         }
+  .ant-menu {
+    height: inherit;
+    float: right;
+    width: 80%;
+    display: flex;
+    justify-content: end;
+    .ant-menu-item {
+      border-bottom: none;
+      a {
+        font-family: "MarkPro";
+        font-size: 14px;
+        color: @text-color-secondary;
+        &:hover {
+          color: @primary-color;
+        }
       }
 
-      &.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-open, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected {
-         color: @primary-color;
-         border-bottom: none;
+      &.ant-menu-item-selected {
+        a {
+          color: @primary-color;
+        }
       }
+    }
 
-      &.ant-menu-item:hover, .ant-menu-item-active, .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-submenu-active, .ant-menu-submenu-title:hover {
-         color: @primary-color;
-         border-bottom: none;
-      }
+    &.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-open,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected {
+      color: @primary-color;
+      border-bottom: none;
+    }
 
-   }
+    &.ant-menu-item:hover,
+    .ant-menu-item-active,
+    .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+    .ant-menu-submenu-active,
+    .ant-menu-submenu-title:hover {
+      color: @primary-color;
+      border-bottom: none;
+    }
+  }
 
-   &.fixed {
-      position: fixed;
-      z-index: 1;
-   }
+  &.fixed {
+    position: fixed;
+    z-index: 1;
+  }
 }
