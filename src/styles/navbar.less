@@ -3,7 +3,7 @@
   width: 100%;
   height: 64px;
   background-color: @white;
-  box-shadow: 5px 1px 30px -19px;
+  box-shadow: 4px 17px 17px -19px;
 
   .logo {
     line-height: 64px;
@@ -12,10 +12,14 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 90px;
-    height: 30px;
-    margin-top: 17px;
+    width: 140px;
+    height: 40px;
+    margin-top: 12px;
     margin-left: 10px;
+  }
+
+  .ant-menu-horizontal > .ant-menu-item::after, .ant-menu-horizontal > .ant-menu-submenu::after {
+    border-bottom: none !important;
   }
 
   .ant-menu {
@@ -29,8 +33,11 @@
       a {
         font-family: "MarkPro";
         font-size: 14px;
-        color: @text-color-secondary;
+        color: @text-color;
         &:hover {
+          color: @primary-color;
+        }
+        &[class*="active"] {
           color: @primary-color;
         }
       }
