@@ -10,17 +10,28 @@ export default ({
   setDocumentType,
   handleOnDocumentNumberBlur,
   form,
-  classNameStyle
+  classNameStyle,
+  type = 'documentTypeChile'
 }) => {
-  const documentTypeChile = [
-    { text: 'Rut', value: 'rut' },
-    { text: 'Pasaporte', value: 'passport' }
-  ]
-  const documentTypePeru = [
-    { text: 'DNI', value: 'dni' },
-    { text: 'RUC', value: 'ruc' },
-    { text: 'Pasaporte', value: 'passport' }
-  ]
+  const documentType = {
+    allChile: [
+      { text: 'Rut', value: 'rut' },
+      { text: 'Pasaporte', value: 'passport' },
+    ],
+    allPeru: [
+      { text: 'RUC', value: 'ruc' },
+      { text: 'Pasaporte', value: 'passport' },
+    ],
+    companyPeru: [
+      { text: 'DNI', value: 'dni' },
+      { text: 'RUC', value: 'ruc' },
+      { text: 'Pasaporte', value: 'passport' },
+    ],
+    personPeru: [
+      { text: 'DNI', value: 'dni' },
+      { text: 'Pasaporte', value: 'passport' },
+    ],
+  };
 
   const placeholderInput = () => {
     let result = '';
@@ -37,7 +48,7 @@ export default ({
         ? 'Número de Rut + DV' : 'Número de pasaporte';
     }
     return result;
-  }
+  };
 
   const handleDocumentType = (value) => {
     setDocumentType(value);
@@ -52,7 +63,7 @@ export default ({
       form.setFieldsValue({ documentNumber: inputValue });
     }
     form.validateFields(['documentNumber']);
-  }
+  };
 
   const validateNumber = ({ getFieldValue }) => ({
     validator(_, value) {
@@ -77,16 +88,16 @@ export default ({
           } else {
             return Promise.reject(new Error('Ruc inválido'));
           }
-        } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'dni' && value.includes('-')) {
+        } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'dni' && value.length === 8) {
           const dni = value.split('-')[0];
-          const cchar = value.split('-')[1];
+          const cchar = value.slice(-1);
           const numberKeys = [6, 7, 8, 9, 0, 1, 1, 2, 3, 4, 5];
           const charKeys = ['K', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
 
           const factors = [3, 2, 7, 6, 5, 4, 3, 2];
-          const dniDigits = dni.trim().split('').map(x => parseInt(x, 10));
-          const sum = dniDigits.reduce((sum, x, i) => {
-            sum += factors[i] * x;
+          const dniDigits = dni.trim().split('').map(digit => parseInt(digit, 10));
+          const sum = dniDigits.reduce((sum, current, index) => {
+            sum += factors[index] * current;
             return sum;
           }, 0);
           let keyIndex = 11 - (sum % 11);
@@ -115,16 +126,8 @@ export default ({
             placeholder='Seleccione tipo de documento'
             onChange={handleDocumentType}
           >
-            {countryCode === 'PE' ?
-              documentTypePeru.map((method, index) => {
-                return (
-                  <Option key={index} value={method.value}>
-                    {method.text}
-                  </Option>
-                )
-              })
-              :
-              documentTypeChile.map((method, index) => {
+            {
+              documentType[type].map((method, index) => {
                 return (
                   <Option key={index} value={method.value}>
                     {method.text}
