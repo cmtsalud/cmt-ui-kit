@@ -3,15 +3,15 @@
 
 
 function __$styleInject(css) {
-  if (!css) return;
+    if (!css) return;
 
-  if (typeof window == 'undefined') return;
-  var style = document.createElement('style');
-  style.setAttribute('media', 'screen');
+    if (typeof window == 'undefined') return;
+    var style = document.createElement('style');
+    style.setAttribute('media', 'screen');
 
-  style.innerHTML = css;
-  document.head.appendChild(style);
-  return css;
+    style.innerHTML = css;
+    document.head.appendChild(style);
+    return css;
 }
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -22,7 +22,7 @@ var parsePhoneNumber = require('libphonenumber-js');
 var PhoneInput = require('react-phone-input-2');
 var es = require('react-phone-input-2/lang/es.json');
 
-function _interopDefaultLegacy(e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var parsePhoneNumber__default = /*#__PURE__*/_interopDefaultLegacy(parsePhoneNumber);
@@ -41,24 +41,42 @@ var documentCard = (function (_ref) {
     setDocumentType = _ref.setDocumentType,
     handleOnDocumentNumberBlur = _ref.handleOnDocumentNumberBlur,
     form = _ref.form,
-    classNameStyle = _ref.classNameStyle;
-  var documentTypeChile = [{
-    text: 'Rut',
-    value: 'rut'
-  }, {
-    text: 'Pasaporte',
-    value: 'passport'
-  }];
-  var documentTypePeru = [{
-    text: 'DNI',
-    value: 'dni'
-  }, {
-    text: 'RUC',
-    value: 'ruc'
-  }, {
-    text: 'Pasaporte',
-    value: 'passport'
-  }];
+    classNameStyle = _ref.classNameStyle,
+    _ref$type = _ref.type,
+    type = _ref$type === void 0 ? 'documentTypeChile' : _ref$type;
+  var documentType = {
+    allChile: [{
+      text: 'Rut',
+      value: 'rut'
+    }, {
+      text: 'Pasaporte',
+      value: 'passport'
+    }],
+    allPeru: [{
+      text: 'RUC',
+      value: 'ruc'
+    }, {
+      text: 'Pasaporte',
+      value: 'passport'
+    }],
+    companyPeru: [{
+      text: 'DNI',
+      value: 'dni'
+    }, {
+      text: 'RUC',
+      value: 'ruc'
+    }, {
+      text: 'Pasaporte',
+      value: 'passport'
+    }],
+    personPeru: [{
+      text: 'DNI',
+      value: 'dni'
+    }, {
+      text: 'Pasaporte',
+      value: 'passport'
+    }]
+  };
   var placeholderInput = function placeholderInput() {
     var result = '';
     if (countryCode === 'PE') {
@@ -110,17 +128,17 @@ var documentCard = (function (_ref) {
             } else {
               return Promise.reject(new Error('Ruc inválido'));
             }
-          } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'dni' && value.includes('-')) {
+          } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'dni' && value.length === 8) {
             var dni = value.split('-')[0];
-            var cchar = value.split('-')[1];
+            var cchar = value.slice(-1);
             var numberKeys = [6, 7, 8, 9, 0, 1, 1, 2, 3, 4, 5];
             var charKeys = ['K', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
             var factors = [3, 2, 7, 6, 5, 4, 3, 2];
-            var dniDigits = dni.trim().split('').map(function (x) {
-              return parseInt(x, 10);
+            var dniDigits = dni.trim().split('').map(function (digit) {
+              return parseInt(digit, 10);
             });
-            var sum = dniDigits.reduce(function (sum, x, i) {
-              sum += factors[i] * x;
+            var sum = dniDigits.reduce(function (sum, current, index) {
+              sum += factors[index] * current;
               return sum;
             }, 0);
             var keyIndex = 11 - sum % 11;
@@ -147,12 +165,7 @@ var documentCard = (function (_ref) {
     className: 'cmt-select ' + classNameStyle,
     placeholder: "Seleccione tipo de documento",
     onChange: handleDocumentType
-  }, countryCode === 'PE' ? documentTypePeru.map(function (method, index) {
-    return /*#__PURE__*/React__default["default"].createElement(Option, {
-      key: index,
-      value: method.value
-    }, method.text);
-  }) : documentTypeChile.map(function (method, index) {
+  }, documentType[type].map(function (method, index) {
     return /*#__PURE__*/React__default["default"].createElement(Option, {
       key: index,
       value: method.value
