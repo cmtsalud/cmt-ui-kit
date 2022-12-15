@@ -19,11 +19,11 @@ export default ({
       { text: 'Pasaporte', value: 'passport' },
     ],
     allPeru: [
+      { text: 'DNI', value: 'dni' },
       { text: 'RUC', value: 'ruc' },
       { text: 'Pasaporte', value: 'passport' },
     ],
     companyPeru: [
-      { text: 'DNI', value: 'dni' },
       { text: 'RUC', value: 'ruc' },
       { text: 'Pasaporte', value: 'passport' },
     ],

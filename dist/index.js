@@ -53,6 +53,9 @@ var documentCard = (function (_ref) {
       value: 'passport'
     }],
     allPeru: [{
+      text: 'DNI',
+      value: 'dni'
+    }, {
       text: 'RUC',
       value: 'ruc'
     }, {
@@ -60,9 +63,6 @@ var documentCard = (function (_ref) {
       value: 'passport'
     }],
     companyPeru: [{
-      text: 'DNI',
-      value: 'dni'
-    }, {
       text: 'RUC',
       value: 'ruc'
     }, {
