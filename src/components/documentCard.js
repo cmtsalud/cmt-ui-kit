@@ -11,6 +11,7 @@ export default ({
   handleOnDocumentNumberBlur,
   form,
   classNameStyle,
+  optional = false,
   type = 'documentTypeChile'
 }) => {
   const documentType = {
@@ -67,7 +68,7 @@ export default ({
 
   const validateNumber = ({ getFieldValue }) => ({
     validator(_, value) {
-      if (value && value.length > 6) {
+      if (value && value.length > 6 && !optional) {
         if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'rut') {
           const cleanRut = clean(value)
           if (validate(cleanRut)) {
@@ -120,6 +121,13 @@ export default ({
         <Form.Item
           name="documentType"
           className="mb-0"
+          rules={[
+            {
+              required: !optional,
+              message: 'Tipo de documento es requerido'
+            },
+            validateNumber
+          ]}
         >
           <Select
             className={'cmt-select ' + classNameStyle}
@@ -143,7 +151,7 @@ export default ({
           name="documentNumber"
           rules={[
             {
-              required: true,
+              required: !optional,
               message: 'Número de documento es requerido'
             },
             validateNumber

@@ -42,6 +42,8 @@ var documentCard = (function (_ref) {
     handleOnDocumentNumberBlur = _ref.handleOnDocumentNumberBlur,
     form = _ref.form,
     classNameStyle = _ref.classNameStyle,
+    _ref$optional = _ref.optional,
+    optional = _ref$optional === void 0 ? false : _ref$optional,
     _ref$type = _ref.type,
     type = _ref$type === void 0 ? 'documentTypeChile' : _ref$type;
   var documentType = {
@@ -109,7 +111,7 @@ var documentCard = (function (_ref) {
     var getFieldValue = _ref2.getFieldValue;
     return {
       validator: function validator(_, value) {
-        if (value && value.length > 6) {
+        if (value && value.length > 6 && !optional) {
           if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'rut') {
             var cleanRut = clean(value);
             if (validate(cleanRut)) {
@@ -160,7 +162,11 @@ var documentCard = (function (_ref) {
     sm: 10
   }, /*#__PURE__*/React__default["default"].createElement(antd.Form.Item, {
     name: "documentType",
-    className: "mb-0"
+    className: "mb-0",
+    rules: [{
+      required: !optional,
+      message: 'Tipo de documento es requerido'
+    }, validateNumber]
   }, /*#__PURE__*/React__default["default"].createElement(antd.Select, {
     className: 'cmt-select ' + classNameStyle,
     placeholder: "Seleccione tipo de documento",
@@ -176,7 +182,7 @@ var documentCard = (function (_ref) {
   }, /*#__PURE__*/React__default["default"].createElement(antd.Form.Item, {
     name: "documentNumber",
     rules: [{
-      required: true,
+      required: !optional,
       message: 'Número de documento es requerido'
     }, validateNumber],
     className: "mb-0"
