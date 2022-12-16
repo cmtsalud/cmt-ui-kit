@@ -12,7 +12,7 @@ export default ({
   form,
   classNameStyle,
   optional = false,
-  type = 'documentTypeChile'
+  type = 'allChile'
 }) => {
   const documentType = {
     allChile: [

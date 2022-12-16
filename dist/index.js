@@ -45,7 +45,7 @@ var documentCard = (function (_ref) {
     _ref$optional = _ref.optional,
     optional = _ref$optional === void 0 ? false : _ref$optional,
     _ref$type = _ref.type,
-    type = _ref$type === void 0 ? 'documentTypeChile' : _ref$type;
+    type = _ref$type === void 0 ? 'allChile' : _ref$type;
   var documentType = {
     allChile: [{
       text: 'Rut',
