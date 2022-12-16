@@ -12,26 +12,32 @@ export default ({
   form,
   classNameStyle,
   optional = false,
-  type = 'allChile'
+  type = 'all'
 }) => {
   const documentType = {
-    allChile: [
-      { text: 'Rut', value: 'rut' },
-      { text: 'Pasaporte', value: 'passport' },
-    ],
-    allPeru: [
-      { text: 'DNI', value: 'dni' },
-      { text: 'RUC', value: 'ruc' },
-      { text: 'Pasaporte', value: 'passport' },
-    ],
-    companyPeru: [
-      { text: 'RUC', value: 'ruc' },
-      { text: 'Pasaporte', value: 'passport' },
-    ],
-    personPeru: [
-      { text: 'DNI', value: 'dni' },
-      { text: 'Pasaporte', value: 'passport' },
-    ],
+    person: {
+      PE: [
+        { text: 'DNI', value: 'dni' },
+        { text: 'Pasaporte', value: 'passport' },
+      ],
+    },
+    company: {
+      PE: [
+        { text: 'RUC', value: 'ruc' },
+        { text: 'Pasaporte', value: 'passport' },
+      ],
+    },
+    all: {
+      CL: [
+        { text: 'Rut', value: 'rut' },
+        { text: 'Pasaporte', value: 'passport' },
+      ],
+      PE: [
+        { text: 'DNI', value: 'dni' },
+        { text: 'RUC', value: 'ruc' },
+        { text: 'Pasaporte', value: 'passport' },
+      ],
+    },
   };
 
   const placeholderInput = () => {
@@ -135,7 +141,7 @@ export default ({
             onChange={handleDocumentType}
           >
             {
-              documentType[type].map((method, index) => {
+              documentType[type][countryCode].map((method, index) => {
                 return (
                   <Option key={index} value={method.value}>
                     {method.text}
