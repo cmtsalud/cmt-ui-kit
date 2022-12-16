@@ -206,7 +206,7 @@ var documentCard = (function (_ref) {
       required: !optional,
       message: 'Número de documento es requerido'
     }, {
-      min: 5,
+      min: 6,
       message: ''
     }, validateNumber],
     className: "mb-0"

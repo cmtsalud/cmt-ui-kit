@@ -169,7 +169,7 @@ export default ({
               message: 'Número de documento es requerido'
             },
             {
-              min: 5,
+              min: 6,
               message: ''
             },
             validateNumber
