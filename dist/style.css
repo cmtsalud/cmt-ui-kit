@@ -137,6 +137,15 @@
 .icon-brand-custom-room:before {
   content: '\e81c';
 }
+.search-phone-class {
+  font-family: 'MarkPro';
+  font-size: 16px;
+  width: 100% !important;
+  border: 1px solid #E4E4E4 !important;
+}
+.search-phone-class::placeholder {
+  color: #BEBEBE;
+}
 /* Colors */
 @font-face {
   font-family: 'MarkPro';
@@ -275,13 +284,4 @@
 }
 .icon-brand-custom-room:before {
   content: '\e81c';
-}
-.search-phone-class {
-  font-family: 'MarkPro';
-  font-size: 16px;
-  width: 100% !important;
-  border: 1px solid #E4E4E4 !important;
-}
-.search-phone-class::placeholder {
-  color: #BEBEBE;
 }

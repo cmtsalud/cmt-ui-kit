@@ -45,39 +45,45 @@ var documentCard = (function (_ref) {
     _ref$optional = _ref.optional,
     optional = _ref$optional === void 0 ? false : _ref$optional,
     _ref$type = _ref.type,
-    type = _ref$type === void 0 ? 'allChile' : _ref$type;
+    type = _ref$type === void 0 ? 'all' : _ref$type;
   var documentType = {
-    allChile: [{
-      text: 'Rut',
-      value: 'rut'
-    }, {
-      text: 'Pasaporte',
-      value: 'passport'
-    }],
-    allPeru: [{
-      text: 'DNI',
-      value: 'dni'
-    }, {
-      text: 'RUC',
-      value: 'ruc'
-    }, {
-      text: 'Pasaporte',
-      value: 'passport'
-    }],
-    companyPeru: [{
-      text: 'RUC',
-      value: 'ruc'
-    }, {
-      text: 'Pasaporte',
-      value: 'passport'
-    }],
-    personPeru: [{
-      text: 'DNI',
-      value: 'dni'
-    }, {
-      text: 'Pasaporte',
-      value: 'passport'
-    }]
+    person: {
+      PE: [{
+        text: 'DNI',
+        value: 'dni'
+      }, {
+        text: 'Pasaporte',
+        value: 'passport'
+      }]
+    },
+    company: {
+      PE: [{
+        text: 'RUC',
+        value: 'ruc'
+      }, {
+        text: 'Pasaporte',
+        value: 'passport'
+      }]
+    },
+    all: {
+      CL: [{
+        text: 'Rut',
+        value: 'rut'
+      }, {
+        text: 'Pasaporte',
+        value: 'passport'
+      }],
+      PE: [{
+        text: 'DNI',
+        value: 'dni'
+      }, {
+        text: 'RUC',
+        value: 'ruc'
+      }, {
+        text: 'Pasaporte',
+        value: 'passport'
+      }]
+    }
   };
   var placeholderInput = function placeholderInput() {
     var result = '';
@@ -171,7 +177,7 @@ var documentCard = (function (_ref) {
     className: 'cmt-select ' + classNameStyle,
     placeholder: "Seleccione tipo de documento",
     onChange: handleDocumentType
-  }, documentType[type].map(function (method, index) {
+  }, documentType[type][countryCode].map(function (method, index) {
     return /*#__PURE__*/React__default["default"].createElement(Option, {
       key: index,
       value: method.value
