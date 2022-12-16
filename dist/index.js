@@ -210,7 +210,7 @@ var documentCard = (function (_ref) {
       message: 'Número de documento es requerido'
     }, {
       min: 6,
-      message: "".concat(form.getFieldValue('documentType') && form.getFieldValue('documentType').toUpperCase(), " inv\xE1lido")
+      message: ''
     }, validateNumber],
     className: "mb-0"
   }, /*#__PURE__*/React__default["default"].createElement(antd.Input, {
