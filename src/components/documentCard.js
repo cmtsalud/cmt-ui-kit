@@ -20,10 +20,18 @@ export default ({
         { text: 'DNI', value: 'dni' },
         { text: 'Pasaporte', value: 'passport' },
       ],
+      CL: [
+        { text: 'Rut', value: 'rut' },
+        { text: 'Pasaporte', value: 'passport' },
+      ],
     },
     company: {
       PE: [
         { text: 'RUC', value: 'ruc' },
+        { text: 'Pasaporte', value: 'passport' },
+      ],
+      CL: [
+        { text: 'Rut', value: 'rut' },
         { text: 'Pasaporte', value: 'passport' },
       ],
     },
