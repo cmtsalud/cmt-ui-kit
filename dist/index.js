@@ -20,6 +20,7 @@ var React = require('react');
 var antd = require('antd');
 var parsePhoneNumber = require('libphonenumber-js');
 var PhoneInput = require('react-phone-input-2');
+require('react-phone-input-2/lib/style.css');
 var es = require('react-phone-input-2/lang/es.json');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -190,6 +191,9 @@ var documentCard = (function (_ref) {
     rules: [{
       required: !optional,
       message: 'Número de documento es requerido'
+    }, {
+      min: 5,
+      message: ''
     }, validateNumber],
     className: "mb-0"
   }, /*#__PURE__*/React__default["default"].createElement(antd.Input, {

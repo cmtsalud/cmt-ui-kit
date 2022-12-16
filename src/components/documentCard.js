@@ -160,6 +160,10 @@ export default ({
               required: !optional,
               message: 'Número de documento es requerido'
             },
+            {
+              min: 5,
+              message: ''
+            },
             validateNumber
           ]}
           className="mb-0"

@@ -2,6 +2,7 @@ import React from "react";
 import { Form } from 'antd';
 import parsePhoneNumber from 'libphonenumber-js';
 import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 import es from 'react-phone-input-2/lang/es.json';
 import '../styles/phone.less';
 
