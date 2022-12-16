@@ -173,7 +173,7 @@ export default ({
             },
             {
               min: 6,
-              message: `${form.getFieldValue('documentType') && form.getFieldValue('documentType').toUpperCase()} inválido`
+              message: ''
             },
             validateNumber
           ]}
