@@ -151,7 +151,10 @@ var documentCard = (function (_ref) {
             } else {
               return Promise.reject(new Error('Ruc inválido'));
             }
-          } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'dni' && value.length === 8) {
+          } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'dni') {
+            if (value.length < 8) {
+              return Promise.reject(new Error('DNI inválido'));
+            }
             var dni = value.split('-')[0];
             var cchar = value.slice(-1);
             var numberKeys = [6, 7, 8, 9, 0, 1, 1, 2, 3, 4, 5];
@@ -207,7 +210,7 @@ var documentCard = (function (_ref) {
       message: 'Número de documento es requerido'
     }, {
       min: 6,
-      message: ''
+      message: "".concat(form.getFieldValue('documentType') || form.getFieldValue('documentType').toUpperCase(), " inv\xE1lido")
     }, validateNumber],
     className: "mb-0"
   }, /*#__PURE__*/React__default["default"].createElement(antd.Input, {

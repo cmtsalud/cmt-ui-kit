@@ -103,7 +103,10 @@ export default ({
           } else {
             return Promise.reject(new Error('Ruc inválido'));
           }
-        } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'dni' && value.length === 8) {
+        } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'dni') {
+          if (value.length < 8) {
+            return Promise.reject(new Error('DNI inválido'));
+          }
           const dni = value.split('-')[0];
           const cchar = value.slice(-1);
           const numberKeys = [6, 7, 8, 9, 0, 1, 1, 2, 3, 4, 5];
@@ -170,7 +173,7 @@ export default ({
             },
             {
               min: 6,
-              message: ''
+              message: `${form.getFieldValue('documentType') || form.getFieldValue('documentType').toUpperCase()} inválido`
             },
             validateNumber
           ]}
