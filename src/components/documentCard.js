@@ -107,7 +107,7 @@ export default ({
           if (value.length < 8) {
             return Promise.reject(new Error('DNI inválido'));
           }
-          const dni = value.split('-')[0];
+          const dni = value.slice(0, -1);
           const cchar = value.slice(-1);
           const numberKeys = [6, 7, 8, 9, 0, 1, 1, 2, 3, 4, 5];
           const charKeys = ['K', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];

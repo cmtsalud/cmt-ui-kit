@@ -155,7 +155,7 @@ var documentCard = (function (_ref) {
             if (value.length < 8) {
               return Promise.reject(new Error('DNI inválido'));
             }
-            var dni = value.split('-')[0];
+            var dni = value.slice(0, -1);
             var cchar = value.slice(-1);
             var numberKeys = [6, 7, 8, 9, 0, 1, 1, 2, 3, 4, 5];
             var charKeys = ['K', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
