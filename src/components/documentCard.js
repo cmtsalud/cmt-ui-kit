@@ -90,42 +90,41 @@ export default ({
           } else {
             return Promise.reject(new Error('Rut inválido'));
           }
-        } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'ruc') {
-          let ruc = value;
-          if (!(ruc >= 1e10 && ruc < 11e9
-            || ruc >= 15e9 && ruc < 18e9
-            || ruc >= 2e10 && ruc < 21e9))
-            return Promise.reject(new Error('Ruc inválido'));
-          for (var suma = -(ruc % 10 < 2), i = 0; i < 11; i++, ruc = ruc / 10 | 0)
-            suma += (ruc % 10) * (i % 7 + (i / 7 | 0) + 1);
-          if (suma % 11 === 0) {
-            return Promise.resolve();
-          } else {
-            return Promise.reject(new Error('Ruc inválido'));
-          }
-        } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'dni') {
-          if (value.length < 8) {
-            return Promise.reject(new Error('DNI inválido'));
-          }
-          const dni = value.slice(0, -1);
-          const cchar = value.slice(-1);
-          const numberKeys = [6, 7, 8, 9, 0, 1, 1, 2, 3, 4, 5];
-          const charKeys = ['K', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+        } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'ruc' && value.length < 11) {
+          return Promise.reject(new Error('Ruc inválido'));
+          // let ruc = value;
+          // if (!(ruc >= 1e10 && ruc < 11e9
+          //   || ruc >= 15e9 && ruc < 18e9
+          //   || ruc >= 2e10 && ruc < 21e9))
+          //   return Promise.reject(new Error('Ruc inválido'));
+          // for (var suma = -(ruc % 10 < 2), i = 0; i < 11; i++, ruc = ruc / 10 | 0)
+          //   suma += (ruc % 10) * (i % 7 + (i / 7 | 0) + 1);
+          // if (suma % 11 === 0) {
+          //   return Promise.resolve();
+          // } else {
+          //   return Promise.reject(new Error('Ruc inválido'));
+          // }
+        } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'dni' && value.length < 8) {
+          return Promise.reject(new Error('DNI inválido'));
+          // const dni = value.slice(0, -1);
+          // const cchar = value.slice(-1);
+          // const numberKeys = [6, 7, 8, 9, 0, 1, 1, 2, 3, 4, 5];
+          // const charKeys = ['K', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
 
-          const factors = [3, 2, 7, 6, 5, 4, 3, 2];
-          const dniDigits = dni.trim().split('').map(digit => parseInt(digit, 10));
-          const sum = dniDigits.reduce((sum, current, index) => {
-            sum += factors[index] * current;
-            return sum;
-          }, 0);
-          let keyIndex = 11 - (sum % 11);
-          keyIndex = keyIndex === 11 ? 0 : keyIndex;
-          const control = parseInt(cchar, 10) || cchar.toUpperCase();
-          if ((isNaN(control) && control == charKeys[keyIndex]) || control == numberKeys[keyIndex]) {
-            return Promise.resolve();
-          } else {
-            return Promise.reject(new Error('DNI inválido'));
-          }
+          // const factors = [3, 2, 7, 6, 5, 4, 3, 2];
+          // const dniDigits = dni.trim().split('').map(digit => parseInt(digit, 10));
+          // const sum = dniDigits.reduce((sum, current, index) => {
+          //   sum += factors[index] * current;
+          //   return sum;
+          // }, 0);
+          // let keyIndex = 11 - (sum % 11);
+          // keyIndex = keyIndex === 11 ? 0 : keyIndex;
+          // const control = parseInt(cchar, 10) || cchar.toUpperCase();
+          // if ((isNaN(control) && control == charKeys[keyIndex]) || control == numberKeys[keyIndex]) {
+          //   return Promise.resolve();
+          // } else {
+          //   return Promise.reject(new Error('DNI inválido'));
+          // }
         }
       }
       return Promise.resolve();
