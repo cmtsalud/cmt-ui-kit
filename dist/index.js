@@ -18,7 +18,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
 var antd = require('antd');
-var parsePhoneNumber = require('libphonenumber-js');
+var parsePhoneNumberWithError = require('libphonenumber-js');
 var PhoneInput = require('react-phone-input-2');
 require('react-phone-input-2/lib/style.css');
 var es = require('react-phone-input-2/lang/es.json');
@@ -26,7 +26,7 @@ var es = require('react-phone-input-2/lang/es.json');
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
-var parsePhoneNumber__default = /*#__PURE__*/_interopDefaultLegacy(parsePhoneNumber);
+var parsePhoneNumberWithError__default = /*#__PURE__*/_interopDefaultLegacy(parsePhoneNumberWithError);
 var PhoneInput__default = /*#__PURE__*/_interopDefaultLegacy(PhoneInput);
 var es__default = /*#__PURE__*/_interopDefaultLegacy(es);
 
@@ -251,7 +251,7 @@ var phone = (function (_ref) {
             } else if (!fieldValue.includes(countryCode === 'PE' ? 51 : 56)) {
               fieldValue = countryCode === 'PE' ? "+51".concat(fieldValue) : "+56".concat(fieldValue);
             }
-            var parsedValue = parsePhoneNumber__default["default"](fieldValue);
+            var parsedValue = parsePhoneNumberWithError__default["default"](fieldValue);
             if (parsedValue && parsedValue.isPossible()) {
               return Promise.resolve();
             }

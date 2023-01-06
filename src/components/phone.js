@@ -1,6 +1,6 @@
 import React from "react";
 import { Form } from 'antd';
-import parsePhoneNumber from 'libphonenumber-js';
+import parsePhoneNumberWithError from 'libphonenumber-js';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import es from 'react-phone-input-2/lang/es.json';
@@ -67,7 +67,7 @@ export default ({
               } else if (!fieldValue.includes(countryCode === 'PE' ? 51 : 56)) {
                 fieldValue = countryCode === 'PE' ? `+51${fieldValue}` : `+56${fieldValue}`;
               }
-              let parsedValue = parsePhoneNumber(fieldValue);
+              let parsedValue = parsePhoneNumberWithError(fieldValue);
               if (parsedValue && parsedValue.isPossible()) {
                 return Promise.resolve();
               }
