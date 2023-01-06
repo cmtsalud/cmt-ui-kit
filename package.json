@@ -27,7 +27,7 @@
   "peerDependencies": {
     "antd": "^4.16.13",
     "less": "^4.1.1",
-    "libphonenumber-js": "^1.10.16",
+    "libphonenumber-js": "1.9.50",
     "react": "^17.0.2",
     "react-phone-input-2": "^2.15.0",
     "rut.js": "^2.0.0"
@@ -39,7 +39,7 @@
     "antd": "^4.16.13",
     "babel-loader": "8.2.5",
     "less": "^4.1.1",
-    "libphonenumber-js": "^1.10.16",
+    "libphonenumber-js": "1.9.50",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-phone-input-2": "^2.15.0",
