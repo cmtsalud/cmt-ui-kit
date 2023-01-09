@@ -231,6 +231,18 @@ var phone = (function (_ref) {
     labelText = _ref.labelText,
     formName = _ref.formName;
   var mostChosenCountries = ["cl", "ve", "pe", "co", "bo", "ec", "ht", "es", "ar", "br", "mx", "us", "cz", "fr", "cu", "cn", "do", "ca", "de", "pt", "at", "au", "ro", "py", "it", "nl", "pl", "gb", "uy"];
+  var countryPrefix = {
+    PE: '+51',
+    CL: '+56'
+  };
+  var onChangeInsidePhone = function onChangeInsidePhone(value) {
+    if (onChangePhone) {
+      return onChangePhone(value);
+    }
+    if (!value) {
+      return countryPrefix[countryCode];
+    }
+  };
   return /*#__PURE__*/React__default["default"].createElement(antd.Form.Item, {
     name: formName ? formName : 'phone',
     label: labelText,
@@ -280,7 +292,7 @@ var phone = (function (_ref) {
     },
     prefix: "+",
     inputClass: "search-phone-class",
-    onChange: onChangePhone && onChangePhone
+    onChange: onChangeInsidePhone
   }));
 });
 

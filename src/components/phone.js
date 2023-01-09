@@ -46,6 +46,20 @@ export default ({
     "uy",
   ];
 
+  const countryPrefix = {
+    PE: '+51',
+    CL: '+56'
+  }
+
+  const onChangeInsidePhone = (value) => {
+    if (onChangePhone) {
+      return onChangePhone(value);
+    }
+    if (!value) {
+      return countryPrefix[countryCode];
+    }
+  }
+
   return (
     <Form.Item
       name={formName ? formName : 'phone'}
@@ -95,7 +109,7 @@ export default ({
         masks={{ 'ar': '(...) ....-....' }}
         prefix="+"
         inputClass="search-phone-class"
-        onChange={onChangePhone && onChangePhone}
+        onChange={onChangeInsidePhone}
       />
     </Form.Item>
   )
