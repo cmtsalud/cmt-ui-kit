@@ -1,0 +1,21 @@
+/*Radio button with secondary color and inverted order */
+
+.cmt-radio.ant-radio-group {
+  span {
+    font-size: 16px !important;
+    order: 1;
+  }
+
+  .ant-radio {
+    order: 2;
+  }
+
+  .ant-radio-wrapper-checked {
+    .ant-radio-checked .ant-radio-inner {
+      border: 1px solid @secondary-color;
+    }
+    .ant-radio-inner::after {
+      background-color: @secondary-color;
+    }
+  }
+}

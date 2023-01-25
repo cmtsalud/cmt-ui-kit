@@ -1,58 +1,190 @@
-/* Navbar with logo and buttons*/
 .cmt-header.ant-layout-header {
-   width: 100%;
-   height: 64px;
-   background-color: @white;
-   box-shadow: 5px 1px 30px -19px;
+  z-index: 1000;
+  padding: 0 3.8vw;
+  width: 100%;
+  height: 66px;
+  background-color: @white;
+  box-shadow: 1px 17px 11px -24px;
 
-   .logo {
-      line-height: 64px;
-      float: left;
-      background-image: url("~cmt-ui-kit/src/images/CMTlogoOrange.svg");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      width: 90px;
-      height: 30px;
-      margin-top: 17px;
-      margin-left: 10px;
-   }
+  .logo {
+    line-height: 64px;
+    float: left;
+    background-image: url("~cmt-ui-kit/src/images/LogoCmtNaranjoCompleto.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 140px;
+    height: 40px;
+    margin-top: 12px;
+    margin-left: 10px;
 
-   .ant-menu {
-      height: inherit;
+    @media screen and (max-width: 991px) {
+      line-height: 55px !important;
+      margin-left: -8px !important;
+      width: 110px;
+    }
+  }
+
+  .ant-menu {
+    display: flex;
+    justify-content: flex-end;
+    float: right;
+    width: 80% !important;
+    border: 0 !important;
+    height: 66px;
+    .ant-menu-item {
+      border-bottom: none;
+      a {
+        font-family: "MarkPro";
+        font-size: 14px;
+        color: @text-color;
+        &:hover {
+          color: @primary-color;
+        }
+        &[class*="active"] {
+          color: @primary-color;
+        }
+      }
+
+      &.ant-menu-item-selected {
+        a {
+          color: @primary-color;
+        }
+      }
+
+      .ant-avatar {
+        display: inline-block;
+        margin-left: 10px;
+      }
+    }
+
+  }
+
+  &.fixed {
+    position: fixed;
+    z-index: 1;
+  }
+
+  .ant-menu-horizontal > .ant-menu-item::after, .ant-menu-horizontal > .ant-menu-submenu::after {
+    border-bottom: none !important;
+  }
+
+  @media screen and (max-width: 991px) {
+    .menu-desktop {
+      display: none !important;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    .menu-mobile-button {
       float: right;
-      .ant-menu-item {
-         border-bottom: none;
-         a {
-            font-family: 'MarkPro';
-            font-size: 14px;
-            color: @text-color-secondary;
-            &:hover {
-               color: @primary-color;
-            }
-         }
-
-         &.ant-menu-item-selected {
-            a {
-               color: @primary-color;
-            }
-         }
+      margin-top: 10px;
+      margin-right: -8px;
+      border: 0;
+      svg {
+        color: @primary-color;
+        font-size: 19px;
       }
+    }
+  }
 
-      &.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-open, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected {
-         color: @primary-color;
-         border-bottom: none;
+  @media screen and (min-width: 991px) {
+    .menu-mobile-button {
+      display: none;
+    }
+  }
+
+}
+
+.ant-affix {
+  z-index: 200;
+  .cmt-header.ant-layout-header {
+    padding: 0 3.8vw;
+    height: 40px !important;
+    box-shadow: 4px 17px 17px -19px;
+
+    .logo {
+      margin-top: 10px;
+      height: 20px;
+      margin-left: -22px;
+      @media screen and (max-width: 991px) {
+        line-height: 65px !important;
       }
-
-      &.ant-menu-item:hover, .ant-menu-item-active, .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-submenu-active, .ant-menu-submenu-title:hover {
-         color: @primary-color;
-         border-bottom: none;
+      img {
+        height: 20px;
       }
+    }
 
-   }
+    .ant-menu {
+      height: 30px;
+    }
 
-   &.fixed {
-      position: fixed;
-      z-index: 1;
-   }
+    .ant-avatar {
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    .cmt-button.ant-btn {
+      display: flex;
+      align-items: center;
+      height: 32px;
+      margin-top: 4px;
+    }
+    .menu-mobile-button {
+      margin-top: 5px !important;
+    }
+  }
+}
+
+.cmt-layout-drawer {
+  z-index: 30000 !important;
+  .ant-drawer-content-wrapper {
+    .ant-drawer-header {
+      padding-right: 15px;
+      .ant-drawer-header-title {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .ant-drawer-close {
+        margin-right: 0;
+        padding: 0;
+        svg {
+          color: @primary-color;
+        }
+      }
+    }
+    .ant-drawer-body {
+      background-color: @white;
+      padding: 0;
+      margin-bottom: 120px;
+      .cmt-button.ant-btn {
+        width: 70%;
+      }
+      .ant-menu-item,
+      .ant-menu-submenu-title {
+        font-size: 14px;
+      }
+      .ant-menu-item.ant-menu-item-only-child {
+        margin: 0;
+      }
+      .ant-menu-item-group {
+        background-color: @white;
+        &-title {
+          color: @primary-color;
+          font-family: "MarkProBold";
+        }
+      }
+      .user-avatar-wrapper {
+        margin-top: 20px;
+        .ant-avatar {
+          display: inline-block;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      width: 280px !important;
+    }
+  }
 }
