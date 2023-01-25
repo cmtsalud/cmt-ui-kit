@@ -48,6 +48,9 @@ var documentCard = (function (_ref) {
   var documentType = {
     person: {
       PE: [{
+        text: 'Carnet de extranjeria',
+        value: 'ce'
+      }, {
         text: 'DNI',
         value: 'dni'
       }, {
@@ -66,9 +69,6 @@ var documentCard = (function (_ref) {
       PE: [{
         text: 'RUC',
         value: 'ruc'
-      }, {
-        text: 'Pasaporte',
-        value: 'passport'
       }],
       CL: [{
         text: 'Rut',
@@ -87,6 +87,9 @@ var documentCard = (function (_ref) {
         value: 'passport'
       }],
       PE: [{
+        text: 'Carnet de extranjeria',
+        value: 'ce'
+      }, {
         text: 'DNI',
         value: 'dni'
       }, {
@@ -173,9 +176,10 @@ var documentCard = (function (_ref) {
             // } else {
             //   return Promise.reject(new Error('DNI inválido'));
             // }
+          } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'ce' && value.length < 8) {
+            return Promise.reject(new Error('DNI inválido'));
           }
         }
-
         return Promise.resolve();
       }
     };

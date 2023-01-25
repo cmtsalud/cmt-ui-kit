@@ -17,6 +17,7 @@ export default ({
   const documentType = {
     person: {
       PE: [
+        { text: 'Carnet de extranjeria', value: 'ce' },
         { text: 'DNI', value: 'dni' },
         { text: 'Pasaporte', value: 'passport' },
       ],
@@ -28,7 +29,6 @@ export default ({
     company: {
       PE: [
         { text: 'RUC', value: 'ruc' },
-        { text: 'Pasaporte', value: 'passport' },
       ],
       CL: [
         { text: 'Rut', value: 'rut' },
@@ -41,6 +41,7 @@ export default ({
         { text: 'Pasaporte', value: 'passport' },
       ],
       PE: [
+        { text: 'Carnet de extranjeria', value: 'ce' },
         { text: 'DNI', value: 'dni' },
         { text: 'RUC', value: 'ruc' },
         { text: 'Pasaporte', value: 'passport' },
@@ -125,6 +126,8 @@ export default ({
           // } else {
           //   return Promise.reject(new Error('DNI inválido'));
           // }
+        } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'ce' && value.length < 8) {
+          return Promise.reject(new Error('DNI inválido'));
         }
       }
       return Promise.resolve();
