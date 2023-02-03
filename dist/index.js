@@ -177,7 +177,7 @@ var documentCard = (function (_ref) {
             //   return Promise.reject(new Error('DNI inválido'));
             // }
           } else if (getFieldValue('documentType') && getFieldValue('documentType').toLowerCase() === 'ce' && value.length < 8) {
-            return Promise.reject(new Error('DNI inválido'));
+            return Promise.reject(new Error('Carnet de extranjería inválido'));
           }
         }
         return Promise.resolve();
