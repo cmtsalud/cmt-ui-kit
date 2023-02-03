@@ -57,7 +57,7 @@ export default ({
           ? 'Número de dni'
           : form.getFieldValue('documentType').toLowerCase() === 'ruc'
             ? 'Número de RUC'
-            : form.getFieldValue('documentType').toLowerCase() === 'ruc'
+            : form.getFieldValue('documentType').toLowerCase() === 'ce'
               ? 'Número de carnet de extranjería'
               : 'Número de pasaporte'
         : form.getFieldValue('documentType');
