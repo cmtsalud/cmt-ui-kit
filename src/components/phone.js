@@ -6,7 +6,12 @@ import 'react-phone-input-2/lib/style.css';
 import es from 'react-phone-input-2/lang/es.json';
 import '../styles/phone.less';
 
-export default ({
+const countryPrefix = {
+  PE: '+51',
+  CL: '+56'
+}
+
+const ReactPhone = ({
   countryCode,
   onChangePhone,
   optional,
@@ -45,11 +50,6 @@ export default ({
     "gb",
     "uy",
   ];
-
-  const countryPrefix = {
-    PE: '+51',
-    CL: '+56'
-  }
 
   const onChangeInsidePhone = (value) => {
     if (onChangePhone) {
@@ -113,4 +113,20 @@ export default ({
       />
     </Form.Item>
   )
+};
+
+const formatPhone = (phone, countryCode) => {
+  let fieldValue = phone;
+
+  if (!fieldValue) {
+    fieldValue = `+${countryPrefix[countryCode]}`;
+  } else if (!phone.includes('+')) {
+    fieldValue = `+${countryPrefix[countryCode]}${phone}`;
+  }
+  return fieldValue;
+};
+
+export default {
+  ReactPhone,
+  formatPhone,
 };

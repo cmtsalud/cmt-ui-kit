@@ -228,17 +228,17 @@ __$styleInject("/* Colors */\n@font-face {\n  font-family: \"MarkPro\";\n  src: 
 
 var _require = require('libphonenumber-js'),
   parsePhoneNumber = _require.parsePhoneNumber;
-var phone = (function (_ref) {
+var countryPrefix = {
+  PE: '+51',
+  CL: '+56'
+};
+var ReactPhone = function ReactPhone(_ref) {
   var countryCode = _ref.countryCode,
     onChangePhone = _ref.onChangePhone,
     optional = _ref.optional,
     labelText = _ref.labelText,
     formName = _ref.formName;
   var mostChosenCountries = ["cl", "ve", "pe", "co", "bo", "ec", "ht", "es", "ar", "br", "mx", "us", "cz", "fr", "cu", "cn", "do", "ca", "de", "pt", "at", "au", "ro", "py", "it", "nl", "pl", "gb", "uy"];
-  var countryPrefix = {
-    PE: '+51',
-    CL: '+56'
-  };
   var onChangeInsidePhone = function onChangeInsidePhone(value) {
     if (onChangePhone) {
       return onChangePhone(value);
@@ -298,7 +298,20 @@ var phone = (function (_ref) {
     inputClass: "search-phone-class",
     onChange: onChangeInsidePhone
   }));
-});
+};
+var formatPhone = function formatPhone(phone, countryCode) {
+  var fieldValue = phone;
+  if (!fieldValue) {
+    fieldValue = "+".concat(countryPrefix[countryCode]);
+  } else if (!phone.includes('+')) {
+    fieldValue = "+".concat(countryPrefix[countryCode]).concat(phone);
+  }
+  return fieldValue;
+};
+var phone = {
+  ReactPhone: ReactPhone,
+  formatPhone: formatPhone
+};
 
 exports.DocumentCard = documentCard;
 exports.PhoneInput = phone;
