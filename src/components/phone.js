@@ -73,20 +73,17 @@ const ReactPhone = ({
           validator(_, value) {
             if (!value || value === '' || value.length <= 4) {
               return Promise.resolve();
-            }
-            if (value && value.length > 4) {
+            } else {
               let fieldValue = value;
               if (!fieldValue.includes('+')) {
-                fieldValue = countryCode === 'PE' ? `+${fieldValue}` : `+${fieldValue}`;
-              } else if (!fieldValue.includes(countryCode === 'PE' ? 51 : 56)) {
-                fieldValue = countryCode === 'PE' ? `+51${fieldValue}` : `+56${fieldValue}`;
+                fieldValue = `+${fieldValue}`;;
               }
               let parsedValue = parsePhoneNumber(fieldValue);
               if (parsedValue && parsedValue.isPossible()) {
                 return Promise.resolve();
               }
             }
-            if (!optional) {
+            if (optional) {
               return Promise.resolve();
             } else {
               return Promise.reject(new Error('Teléfono incorrecto. Revisa el prefijo y/o dígitos.'));
@@ -117,11 +114,10 @@ const ReactPhone = ({
 
 const formatPhone = (phone, countryCode) => {
   let fieldValue = phone;
-
   if (!fieldValue) {
-    fieldValue = `+${countryPrefix[countryCode]}`;
+    fieldValue = `${countryPrefix[countryCode]}`;
   } else if (!phone.includes('+')) {
-    fieldValue = `+${countryPrefix[countryCode]}${phone}`;
+    fieldValue = `${countryPrefix[countryCode]}${phone}`;
   }
   return fieldValue;
 };

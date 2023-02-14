@@ -259,20 +259,17 @@ var ReactPhone = function ReactPhone(_ref) {
         validator: function validator(_, value) {
           if (!value || value === '' || value.length <= 4) {
             return Promise.resolve();
-          }
-          if (value && value.length > 4) {
+          } else {
             var fieldValue = value;
             if (!fieldValue.includes('+')) {
-              fieldValue = countryCode === 'PE' ? "+".concat(fieldValue) : "+".concat(fieldValue);
-            } else if (!fieldValue.includes(countryCode === 'PE' ? 51 : 56)) {
-              fieldValue = countryCode === 'PE' ? "+51".concat(fieldValue) : "+56".concat(fieldValue);
+              fieldValue = "+".concat(fieldValue);
             }
             var parsedValue = parsePhoneNumber(fieldValue);
             if (parsedValue && parsedValue.isPossible()) {
               return Promise.resolve();
             }
           }
-          if (!optional) {
+          if (optional) {
             return Promise.resolve();
           } else {
             return Promise.reject(new Error('Teléfono incorrecto. Revisa el prefijo y/o dígitos.'));
@@ -302,9 +299,9 @@ var ReactPhone = function ReactPhone(_ref) {
 var formatPhone = function formatPhone(phone, countryCode) {
   var fieldValue = phone;
   if (!fieldValue) {
-    fieldValue = "+".concat(countryPrefix[countryCode]);
+    fieldValue = "".concat(countryPrefix[countryCode]);
   } else if (!phone.includes('+')) {
-    fieldValue = "+".concat(countryPrefix[countryCode]).concat(phone);
+    fieldValue = "".concat(countryPrefix[countryCode]).concat(phone);
   }
   return fieldValue;
 };
