@@ -69,6 +69,9 @@ var documentCard = (function (_ref) {
       PE: [{
         text: 'RUC',
         value: 'ruc'
+      }, {
+        text: 'Pasaporte',
+        value: 'passport'
       }],
       CL: [{
         text: 'Rut',

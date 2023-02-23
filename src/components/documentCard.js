@@ -29,6 +29,7 @@ export default ({
     company: {
       PE: [
         { text: 'RUC', value: 'ruc' },
+        { text: 'Pasaporte', value: 'passport' },
       ],
       CL: [
         { text: 'Rut', value: 'rut' },
