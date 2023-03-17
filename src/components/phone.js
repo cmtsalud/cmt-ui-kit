@@ -17,7 +17,12 @@ const ReactPhone = ({
   optional,
   labelText,
   formName,
-  formClassName
+  formClassName,
+  containerClass,
+  inputClass,
+  buttonClass,
+  dropdownClass,
+  searchClass,
 }) => {
 
   const mostChosenCountries = [
@@ -95,6 +100,11 @@ const ReactPhone = ({
       ]}
     >
       <PhoneInput
+        containerClass={containerClass}
+        inputClass={`search-phone-class ${inputClass}`}
+        buttonClass={buttonClass}
+        dropdownClass={dropdownClass}
+        searchClass={searchClass}
         country={countryCode && countryCode.toLowerCase()}
         id={formName ? formName : 'phone'}
         localization={es}
@@ -107,7 +117,6 @@ const ReactPhone = ({
         searchNotFound='No hay resultados'
         masks={{ 'ar': '(...) ....-....' }}
         prefix="+"
-        inputClass="search-phone-class"
         onChange={onChangeInsidePhone}
       />
     </Form.Item>

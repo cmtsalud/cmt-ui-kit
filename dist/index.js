@@ -242,7 +242,12 @@ var ReactPhone = function ReactPhone(_ref) {
     optional = _ref.optional,
     labelText = _ref.labelText,
     formName = _ref.formName,
-    formClassName = _ref.formClassName;
+    formClassName = _ref.formClassName,
+    containerClass = _ref.containerClass,
+    inputClass = _ref.inputClass,
+    buttonClass = _ref.buttonClass,
+    dropdownClass = _ref.dropdownClass,
+    searchClass = _ref.searchClass;
   var mostChosenCountries = ["cl", "ve", "pe", "co", "bo", "ec", "ht", "es", "ar", "br", "mx", "us", "cz", "fr", "cu", "cn", "do", "ca", "de", "pt", "at", "au", "ro", "py", "it", "nl", "pl", "gb", "uy"];
   var onChangeInsidePhone = function onChangeInsidePhone(value) {
     if (onChangePhone) {
@@ -284,6 +289,11 @@ var ReactPhone = function ReactPhone(_ref) {
       };
     }]
   }, /*#__PURE__*/React__default["default"].createElement(PhoneInput__default["default"], {
+    containerClass: containerClass,
+    inputClass: "search-phone-class ".concat(inputClass),
+    buttonClass: buttonClass,
+    dropdownClass: dropdownClass,
+    searchClass: searchClass,
     country: countryCode && countryCode.toLowerCase(),
     id: formName ? formName : 'phone',
     localization: es__default["default"],
@@ -298,7 +308,6 @@ var ReactPhone = function ReactPhone(_ref) {
       'ar': '(...) ....-....'
     },
     prefix: "+",
-    inputClass: "search-phone-class",
     onChange: onChangeInsidePhone
   }));
 };
