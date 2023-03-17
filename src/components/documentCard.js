@@ -10,7 +10,8 @@ export default ({
   setDocumentType,
   handleOnDocumentNumberBlur,
   form,
-  classNameStyle,
+  inputClassName,
+  formClassName,
   optional = false,
   type = 'all'
 }) => {
@@ -143,7 +144,7 @@ export default ({
       <Col xs={24} sm={10}>
         <Form.Item
           name="documentType"
-          className="mb-0"
+          className={`mb-0 ${formClassName}`}
           rules={[
             {
               required: !optional,
@@ -153,7 +154,7 @@ export default ({
           ]}
         >
           <Select
-            className={'cmt-select ' + classNameStyle}
+            className={`cmt-input ${inputClassName}`}
             placeholder='Seleccione tipo de documento'
             onChange={handleDocumentType}
           >
@@ -172,6 +173,7 @@ export default ({
       <Col xs={24} sm={14}>
         <Form.Item
           name="documentNumber"
+          className={`mb-0 ${formClassName}`}
           rules={[
             {
               required: !optional,
@@ -183,10 +185,9 @@ export default ({
             },
             validateNumber
           ]}
-          className="mb-0"
         >
           <Input
-            className={'cmt-input ' + classNameStyle}
+            className={`cmt-input ${inputClassName}`}
             placeholder={placeholderInput()}
             onChange={handleDocumentNumber}
             onBlur={handleOnDocumentNumberBlur}

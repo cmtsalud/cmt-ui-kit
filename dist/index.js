@@ -40,7 +40,8 @@ var documentCard = (function (_ref) {
     setDocumentType = _ref.setDocumentType,
     handleOnDocumentNumberBlur = _ref.handleOnDocumentNumberBlur,
     form = _ref.form,
-    classNameStyle = _ref.classNameStyle,
+    inputClassName = _ref.inputClassName,
+    formClassName = _ref.formClassName,
     _ref$optional = _ref.optional,
     optional = _ref$optional === void 0 ? false : _ref$optional,
     _ref$type = _ref.type,
@@ -192,13 +193,13 @@ var documentCard = (function (_ref) {
     sm: 10
   }, /*#__PURE__*/React__default["default"].createElement(antd.Form.Item, {
     name: "documentType",
-    className: "mb-0",
+    className: "mb-0 ".concat(formClassName),
     rules: [{
       required: !optional,
       message: 'Tipo de documento es requerido'
     }, validateNumber]
   }, /*#__PURE__*/React__default["default"].createElement(antd.Select, {
-    className: 'cmt-select ' + classNameStyle,
+    className: "cmt-input ".concat(inputClassName),
     placeholder: "Seleccione tipo de documento",
     onChange: handleDocumentType
   }, documentType[type][countryCode].map(function (method, index) {
@@ -211,16 +212,16 @@ var documentCard = (function (_ref) {
     sm: 14
   }, /*#__PURE__*/React__default["default"].createElement(antd.Form.Item, {
     name: "documentNumber",
+    className: "mb-0 ".concat(formClassName),
     rules: [{
       required: !optional,
       message: 'Número de documento es requerido'
     }, {
       min: 6,
       message: ''
-    }, validateNumber],
-    className: "mb-0"
+    }, validateNumber]
   }, /*#__PURE__*/React__default["default"].createElement(antd.Input, {
-    className: 'cmt-input ' + classNameStyle,
+    className: "cmt-input ".concat(inputClassName),
     placeholder: placeholderInput(),
     onChange: handleDocumentNumber,
     onBlur: handleOnDocumentNumberBlur
@@ -240,7 +241,8 @@ var ReactPhone = function ReactPhone(_ref) {
     onChangePhone = _ref.onChangePhone,
     optional = _ref.optional,
     labelText = _ref.labelText,
-    formName = _ref.formName;
+    formName = _ref.formName,
+    formClassName = _ref.formClassName;
   var mostChosenCountries = ["cl", "ve", "pe", "co", "bo", "ec", "ht", "es", "ar", "br", "mx", "us", "cz", "fr", "cu", "cn", "do", "ca", "de", "pt", "at", "au", "ro", "py", "it", "nl", "pl", "gb", "uy"];
   var onChangeInsidePhone = function onChangeInsidePhone(value) {
     if (onChangePhone) {
@@ -252,6 +254,7 @@ var ReactPhone = function ReactPhone(_ref) {
   };
   return /*#__PURE__*/React__default["default"].createElement(antd.Form.Item, {
     name: formName ? formName : 'phone',
+    className: formClassName,
     label: labelText,
     rules: [{
       required: !optional,

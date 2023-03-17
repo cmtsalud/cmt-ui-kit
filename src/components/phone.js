@@ -16,7 +16,8 @@ const ReactPhone = ({
   onChangePhone,
   optional,
   labelText,
-  formName
+  formName,
+  formClassName
 }) => {
 
   const mostChosenCountries = [
@@ -63,6 +64,7 @@ const ReactPhone = ({
   return (
     <Form.Item
       name={formName ? formName : 'phone'}
+      className={formClassName}
       label={labelText}
       rules={[
         {
