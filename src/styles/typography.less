@@ -1,17 +1,4 @@
 @font-face {
-  font-family: 'icomoon';
-  src:  url('../fonts/icons/Iconmoon/fonts/icomoon.eot?ehgfx7');
-  src:  url('../fonts/icons/Iconmoon/fonts/icomoon.eot?ehgfx7#iefix') format('embedded-opentype'),
-    url('../fonts/icons/Iconmoon/fonts/icomoon.ttf?ehgfx7') format('truetype'),
-    url('../fonts/icons/Iconmoon/fonts/icomoon.woff?ehgfx7') format('woff'),
-    url('../fonts/icons/Iconmoon/fonts/icomoon.svg?ehgfx7#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-
-@font-face {
   font-family: "MarkPro";
   src: url("~cmt-ui-kit/src/fonts/MarkPro/MarkPro.woff") format("woff"),
     url("~cmt-ui-kit/src/fonts/MarkPro/MarkPro.woff2") format("woff2");
@@ -29,348 +16,266 @@
   font-display: swap;
 }
 
-// @font-face {
-//   font-family: "fontello";
-//   src: url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.eot?12700268");
-//   src: url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.eot?12700268#iefix")
-//       format("embedded-opentype"),
-//     url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.woff2?12700268")
-//       format("woff2"),
-//     url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.woff?12700268")
-//       format("woff"),
-//     url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.ttf?12700268")
-//       format("truetype"),
-//     url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.svg?12700268#fontello")
-//       format("svg");
-//   font-weight: normal;
-//   font-style: normal;
-//   font-size: 20px;
-// }
+@font-face {
+  font-family: "fontello";
+  src: url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.eot?12700268");
+  src: url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.eot?12700268#iefix")
+      format("embedded-opentype"),
+    url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.woff2?12700268")
+      format("woff2"),
+    url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.woff?12700268")
+      format("woff"),
+    url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.ttf?12700268")
+      format("truetype"),
+    url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.svg?12700268#fontello")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+}
 
-
-// [class^="icon-"]:before,
-// [class*=" icon-"]:before {
-//   font-family: "fontello" !important;
-//   font-style: normal;
-//   font-weight: normal;
-//   speak: never;
-
-//   display: inline-block;
-//   text-decoration: inherit;
-//   width: 1em;
-//   margin-right: 0.2em;
-//   text-align: center;
-
-//   /* For safety - reset parent styles, that can break glyph codes*/
-//   font-variant: normal;
-//   text-transform: none;
-
-//   /* fix buttons height, for twitter bootstrap */
-//   line-height: 1em;
-
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-// }
-
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: never;
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello" !important;
   font-style: normal;
   font-weight: normal;
+  speak: never;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+
+  /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
 
-  /* Better Font Rendering =========== */
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-// /* System Icons */
+/* System Icons */
 
-// .icon-age-majority:before {
-//   content: "\e526";
-// }
-// .icon-agenda:before {
-//   content: "\e518";
-// }
-// .icon-aim:before {
-//   content: "\e517";
-// }
-// .icon-alert:before {
-//   content: "\e502";
-// }
-// .icon-ambulance:before {
-//   content: "\e536";
-// }
-// .icon-building:before {
-//   content: "\e541";
-// }
-// .icon-chat:before {
-//   content: "\e505";
-// }
-// .icon-cistern:before {
-//   content: "\e521";
-// }
-// .icon-claw-machine:before {
-//   content: "\e513";
-// }
-// .icon-clock-rush:before {
-//   content: "\e515";
-// }
-// .icon-documents-check:before {
-//   content: "\e516";
-// }
-// .icon-drill:before {
-//   content: "\e534";
-// }
-// .icon-dynamite:before {
-//   content: "\e520";
-// }
-// .icon-faucet:before {
-//   content: "\e506";
-// }
-// .icon-food-restriction:before {
-//   content: "\e504";
-// }
-// .icon-framed-check:before {
-//   content: "\e508";
-// }
-// .icon-gender:before {
-//   content: "\e501";
-// }
-// .icon-giving-life:before {
-//   content: "\e537";
-// }
-// .icon-giving-status:before {
-//   content: "\e539";
-// }
-// .icon-glasses:before {
-//   content: "\e535";
-// }
-// .icon-glucose-test:before {
-//   content: "\e503";
-// }
-// .icon-gear:before {
-//   content: "\e511";
-// }
-// .icon-health-book:before {
-//   content: "\e507";
-// }
-// .icon-health-staff:before {
-//   content: "\e542";
-// }
-// .icon-heart-ekg:before {
-//   content: "\e519";
-// }
-// .icon-helmet:before {
-//   content: "\e523";
-// }
-// .icon-hyssop-tube:before {
-//   content: "\e533";
-// }
-// .icon-lightbulb:before {
-//   content: "\e538";
-// }
-// .icon-medical-kit:before {
-//   content: "\e532";
-// }
-// .icon-minerals:before {
-//   content: "\e524";
-// }
-// .icon-nodes:before {
-//   content: "\e510";
-// }
-// .icon-on-point:before {
-//   content: "\e540";
-// }
-// .icon-on-time-clock:before {
-//   content: "\e530";
-// }
-// .icon-patogen:before {
-//   content: "\e500";
-// }
-// .icon-pick:before {
-//   content: "\e527";
-// }
-// .icon-pill:before {
-//   content: "\e529";
-// }
-// .icon-shield-check:before {
-//   content: "\e509";
-// }
-// .icon-squared-check:before {
-//   content: "\e514";
-// }
-// .icon-sun:before {
-//   content: "\e522";
-// }
-// .icon-test-tube:before {
-//   content: "\e543";
-// }
-// .icon-truck:before {
-//   content: "\e528";
-// }
-// .icon-user-id:before {
-//   content: "\e531";
-// }
-// .icon-wheelchair:before {
-//   content: "\e525";
-// }
-// .icon-facebook:before {
-//   content: "\e810";
-// }
-// .icon-alert-square .path1:before {
-//   content: "\e801";
-//   color: rgb(208, 42, 42);
-// }
-// .icon-alert-square .path2:before {
-//   content: "\e802";
-//   margin-left: -1em;
-//   color: rgb(255, 255, 255);
-// }
-// .icon-brand-feedback .path1:before {
-//   content: "\e811";
-//   color: rgb(47, 153, 51);
-// }
-// .icon-brand-feedback .path2:before {
-//   content: "\e812";
-//   margin-left: -1em;
-//   color: rgb(255, 255, 255);
-// }
-// .icon-brand-question-square .path1:before {
-//   content: "\e819";
-//   color: rgb(34, 58, 112);
-// }
-// .icon-brand-question-square .path2:before {
-//   content: "\e81a";
-//   margin-left: -1em;
-//   color: rgb(255, 255, 255);
-// }
-// .icon-billing .path1:before {
-//   content: "\e80d";
-//   color: rgb(91, 53, 109);
-// }
-// .icon-billing .path2:before {
-//   content: "\e80e";
-//   margin-left: -1em;
-//   color: rgb(172, 153, 181);
-// }
-// .icon-calendar:before {
-//   content: "\e803";
-//   color: #dc582a;
-// }
-// .icon-chart .path1:before {
-//   content: "\e804";
-//   color: rgb(48, 154, 128);
-// }
-// .icon-chart .path2:before {
-//   content: "\e805";
-//   margin-left: -1em;
-//   color: rgb(48, 154, 128);
-// }
-// .icon-chart .path3:before {
-//   content: "\e806";
-//   margin-left: -1em;
-//   color: rgb(150, 204, 191);
-// }
-// .icon-chart .path4:before {
-//   content: "\e807";
-//   margin-left: -1em;
-//   color: rgb(150, 204, 191);
-// }
-// .icon-download:before {
-//   content: "\e8022";
-// }
-// .icon-delete:before {
-//   content: "\e80c";
-//   color: #223a70;
-// }
-// .icon-check:before {
-//   content: "\e8055";
-//   color: #223a70;
-// }
-// .icon-chevron-down:before {
-//   content: "\e93d";
-//   color: #223a70;
-// }
-// .icon-chevron-up:before {
-//   content: "\e809";
-//   color: #223a70;
-// }
-// .icon-chevron-right:before {
-//   content: "\e808";
-//   color: #223a70;
-// }
-// .icon-chevron-left:before {
-//   content: "\e940";
-//   color: #223a70;
-// }
-// .icon-edit:before {
-//   content: "\e80f";
-//   color: #223a70;
-// }
-// .icon-search:before {
-//   content: "\e942";
-//   color: #223a70;
-// }
-// .icon-plus:before {
-//   content: "\e818";
-//   color: #223a70;
-// }
-// .icon-user:before {
-//   content: "\e81c";
-//   color: #223a70;
-// }
-// .icon-clock:before {
-//   content: "\e80a";
-//   color: #223a70;
-// }
-// .icon-mail:before {
-//   content: "\e814";
-//   color: #223a70;
-// }
-// .icon-phone:before {
-//   content: "\e816";
-//   color: #223a70;
-// }
-// .icon-placeholder:before {
-//   content: "\e817";
-//   color: #223a70;
-// }
-// .icon-close:before {
-//   content: "\e80b";
-//   color: #223a70;
-// }
-// .icon-laboratory:before {
-//   content: "\e94a";
-// }
-// .icon-linkedin:before {
-//   content: "\e813";
-// }
-// .icon-menu:before {
-//   content: "\e815";
-//   color: #505050;
-// }
-// .icon-money .path1:before {
-//   content: "\e81d";
-//   color: rgb(150, 204, 191);
-// }
-// .icon-money .path2:before {
-//   content: "\e81e";
-//   margin-left: -1em;
-//   color: rgb(48, 154, 128);
-// }
-// .icon-share:before {
-//   content: "\e81b";
-//   color: #dc582a;
-// }
-
-
-.icon-book:before {
-  content: "\e91f";
+.icon-system-edit:before { 
+  content: "\e80f";
 }
-.icon-books:before {
-  content: "\e920";
+.icon-system-calendar:before { 
+  content: "\e803";
+}
+.icon-system-clock:before {  
+  content: "\e80a";
+}
+.icon-system-close:before {  
+  content: "\e80b";
+}
+.icon-system-chevron-up:before {
+  content: "\e809";
+}
+.icon-system-chevron-right:before {
+  content: "\e808";
+}
+.icon-system-chevron-left:before {
+  content: "\e807";
+}
+.icon-system-chevron-down:before {
+  content: "\e806";
+}
+.icon-system-delete:before { 
+  content: "\e80c";
+}
+.icon-system-placeholder:before {
+  content: "\e817";
+}
+.icon-system-search:before { 
+  content: "\e81a";
+}
+.icon-system-mail:before {
+  content: "\e814";
+}
+.icon-system-phone:before {
+  content: "\e816";
+}
+.icon-system-plus:before {
+  content: "\e818";
+}
+.icon-system-user:before {
+  content: "\e81c";
+}
+.icon-system-check:before { 
+  content: "\e805";
+}
+.icon-system-calendar-2:before {
+  content: "\e802";
+}
+.icon-system-download:before { 
+  content: "\e80e";
+}
+.icon-system-menu:before { 
+  content: '\e815';
+}
+.icon-system-share:before {
+  content: '\e81b';
+}
+.icon-system-patogen:before {
+  content: '\e500';
+}
+.icon-system-gender:before {
+  content: '\e501';
+}
+.icon-system-alert:before {
+  content: '\e502';
+}
+.icon-system-glucose-test:before {
+  content: '\e503';
+}
+.icon-system-food-restriction:before {
+  content: '\e504';
+}
+.icon-system-chat:before {
+  content: '\e505';
+}
+.icon-system-faucet:before {
+  content: '\e506';
+}
+.icon-system-health-book:before {
+  content: '\e507';
+}
+.icon-system-framed-check:before {
+  content: '\e508';
+}
+.icon-system-shield-check:before {
+  content: '\e509';
+}
+.icon-system-nodes:before {
+  content: '\e510';
+}
+.icon-system-gear:before {
+  content: '\e511';
+}
+.icon-system-claw-machine:before {
+  content: '\e513';
+}
+.icon-system-squared-check:before {
+  content: '\e514';
+}
+.icon-system-clock-rush:before {
+  content: '\e515';
+}
+.icon-system-documents-check:before {
+  content: '\e516';
+}
+.icon-system-aim:before {
+  content: '\e517';
+}
+.icon-system-agenda:before {
+  content: '\e518';
+}
+.icon-system-heart-ekg:before {
+  content: '\e519';
+}
+.icon-system-dynamite:before {
+  content: '\e520';
+}
+.icon-system-cistern:before {
+  content: '\e521';
+}
+.icon-system-sun:before {
+  content: '\e522';
+}
+.icon-system-helmet:before {
+  content: '\e523';
+}
+.icon-system-minerals:before {
+  content: '\e524';
+}
+.icon-system-wheelchair:before {
+  content: '\e525';
+}
+.icon-system-age-majority:before {
+  content: '\e526';
+}
+.icon-system-pick:before {
+  content: '\e527';
+}
+.icon-system-truck:before {
+  content: '\e528';
+}
+.icon-system-pill:before {
+  content: '\e529';
+}
+.icon-system-on-time-clock:before {
+  content: '\e530';
+}
+.icon-system-user-id:before {
+  content: '\e531';
+}
+.icon-system-medical-kit:before {
+  content: '\e532';
+}
+.icon-system-hyssop-tube:before {
+  content: '\e533';
+}
+.icon-system-drill:before {
+  content: '\e534';
+}
+.icon-system-glasses:before {
+  content: '\e535';
+}
+.icon-system-ambulance:before {
+  content: '\e536';
+}
+.icon-system-giving-life:before {
+  content: '\e537';
+}
+.icon-system-lightbulb:before {
+  content: '\e538';
+}
+.icon-system-giving-status:before {
+  content: '\e539';
+}
+.icon-system-on-point:before {
+  content: '\e540';
+}
+.icon-system-building:before {
+  content: '\e541';
+}
+.icon-system-health-staff:before {
+  content: '\e542';
+}
+
+/* Brand Icons */
+
+.icon-brand-facebook:before { 
+  content: "\e810";
+}
+.icon-brand-laboratory:before {  
+  content: "\e812";
+}
+.icon-brand-linkedin:before {
+  content: "\e813";
+}
+.icon-brand-billing:before {
+  content: "\e80d";
+}
+.icon-brand-feedback:before { 
+  content: '\e811';
+}
+.icon-brand-question-square:before { 
+  content: '\e819';
+}
+.icon-brand-chart:before { 
+  content: '\e804';
+}
+.icon-alert-square:before { 
+  content: '\e801';
+}
+.icon-alert-rounded:before {
+  content: '\e800';
+}
+.icon-brand-money:before {
+  content: '\e81d';
 }
