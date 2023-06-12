@@ -16,266 +16,308 @@
   font-display: swap;
 }
 
+// @font-face {
+//   font-family: "fontello";
+//   src: url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.eot?12700268");
+//   src: url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.eot?12700268#iefix")
+//       format("embedded-opentype"),
+//     url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.woff2?12700268")
+//       format("woff2"),
+//     url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.woff?12700268")
+//       format("woff"),
+//     url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.ttf?12700268")
+//       format("truetype"),
+//     url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.svg?12700268#fontello")
+//       format("svg");
+//   font-weight: normal;
+//   font-style: normal;
+//   font-size: 20px;
+// }
+
 @font-face {
-  font-family: "fontello";
-  src: url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.eot?12700268");
-  src: url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.eot?12700268#iefix")
-      format("embedded-opentype"),
-    url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.woff2?12700268")
-      format("woff2"),
-    url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.woff?12700268")
-      format("woff"),
-    url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.ttf?12700268")
-      format("truetype"),
-    url("~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.svg?12700268#fontello")
-      format("svg");
+  font-family: "untitled-font-1";
+  src:url("~cmt-ui-kit/src/fonts/icons/Fontello/font/untitled-font-1.eot");
+  src:url("~cmt-ui-kit/src/fonts/icons/Fontello/font/untitled-font-1.eot?#iefix") format("embedded-opentype"),
+    url("~cmt-ui-kit/src/fonts/icons/Fontello/font/untitled-font-1.woff") format("woff"),
+    url("~cmt-ui-kit/src/fonts/icons/Fontello/font/untitled-font-1.ttf") format("truetype"),
+    url("~cmt-ui-kit/src/fonts/icons/Fontello/font/untitled-font-1.svg#untitled-font-1") format("svg");
   font-weight: normal;
   font-style: normal;
-  font-size: 20px;
+
 }
 
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-  font-family: "fontello" !important;
-  font-style: normal;
-  font-weight: normal;
-  speak: never;
-
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: 0.2em;
-  text-align: center;
-
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
-
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-
+[data-icon]:before {
+  font-family: "untitled-font-1" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "untitled-font-1" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-age-majority:before {
+  content: "\61";
+}
+
+// [class^="icon-"]:before,
+// [class*=" icon-"]:before {
+//   font-family: "fontello" !important;
+//   font-style: normal;
+//   font-weight: normal;
+//   speak: never;
+
+//   display: inline-block;
+//   text-decoration: inherit;
+//   width: 1em;
+//   margin-right: 0.2em;
+//   text-align: center;
+
+//   /* For safety - reset parent styles, that can break glyph codes*/
+//   font-variant: normal;
+//   text-transform: none;
+
+//   /* fix buttons height, for twitter bootstrap */
+//   line-height: 1em;
+
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
 /* System Icons */
 
-.icon-system-edit:before { 
-  content: "\e80f";
-}
-.icon-system-calendar:before { 
-  content: "\e803";
-}
-.icon-system-clock:before {  
-  content: "\e80a";
-}
-.icon-system-close:before {  
-  content: "\e80b";
-}
-.icon-system-chevron-up:before {
-  content: "\e809";
-}
-.icon-system-chevron-right:before {
-  content: "\e808";
-}
-.icon-system-chevron-left:before {
-  content: "\e807";
-}
-.icon-system-chevron-down:before {
-  content: "\e806";
-}
-.icon-system-delete:before { 
-  content: "\e80c";
-}
-.icon-system-placeholder:before {
-  content: "\e817";
-}
-.icon-system-search:before { 
-  content: "\e81a";
-}
-.icon-system-mail:before {
-  content: "\e814";
-}
-.icon-system-phone:before {
-  content: "\e816";
-}
-.icon-system-plus:before {
-  content: "\e818";
-}
-.icon-system-user:before {
-  content: "\e81c";
-}
-.icon-system-check:before { 
-  content: "\e805";
-}
-.icon-system-calendar-2:before {
-  content: "\e802";
-}
-.icon-system-download:before { 
-  content: "\e80e";
-}
-.icon-system-menu:before { 
-  content: '\e815';
-}
-.icon-system-share:before {
-  content: '\e81b';
-}
-.icon-system-patogen:before {
-  content: '\e500';
-}
-.icon-system-gender:before {
-  content: '\e501';
-}
-.icon-system-alert:before {
-  content: '\e502';
-}
-.icon-system-glucose-test:before {
-  content: '\e503';
-}
-.icon-system-food-restriction:before {
-  content: '\e504';
-}
-.icon-system-chat:before {
-  content: '\e505';
-}
-.icon-system-faucet:before {
-  content: '\e506';
-}
-.icon-system-health-book:before {
-  content: '\e507';
-}
-.icon-system-framed-check:before {
-  content: '\e508';
-}
-.icon-system-shield-check:before {
-  content: '\e509';
-}
-.icon-system-nodes:before {
-  content: '\e510';
-}
-.icon-system-gear:before {
-  content: '\e511';
-}
-.icon-system-claw-machine:before {
-  content: '\e513';
-}
-.icon-system-squared-check:before {
-  content: '\e514';
-}
-.icon-system-clock-rush:before {
-  content: '\e515';
-}
-.icon-system-documents-check:before {
-  content: '\e516';
-}
-.icon-system-aim:before {
-  content: '\e517';
-}
-.icon-system-agenda:before {
-  content: '\e518';
-}
-.icon-system-heart-ekg:before {
-  content: '\e519';
-}
-.icon-system-dynamite:before {
-  content: '\e520';
-}
-.icon-system-cistern:before {
-  content: '\e521';
-}
-.icon-system-sun:before {
-  content: '\e522';
-}
-.icon-system-helmet:before {
-  content: '\e523';
-}
-.icon-system-minerals:before {
-  content: '\e524';
-}
-.icon-system-wheelchair:before {
-  content: '\e525';
-}
-.icon-system-age-majority:before {
-  content: '\e526';
-}
-.icon-system-pick:before {
-  content: '\e527';
-}
-.icon-system-truck:before {
-  content: '\e528';
-}
-.icon-system-pill:before {
-  content: '\e529';
-}
-.icon-system-on-time-clock:before {
-  content: '\e530';
-}
-.icon-system-user-id:before {
-  content: '\e531';
-}
-.icon-system-medical-kit:before {
-  content: '\e532';
-}
-.icon-system-hyssop-tube:before {
-  content: '\e533';
-}
-.icon-system-drill:before {
-  content: '\e534';
-}
-.icon-system-glasses:before {
-  content: '\e535';
-}
-.icon-system-ambulance:before {
-  content: '\e536';
-}
-.icon-system-giving-life:before {
-  content: '\e537';
-}
-.icon-system-lightbulb:before {
-  content: '\e538';
-}
-.icon-system-giving-status:before {
-  content: '\e539';
-}
-.icon-system-on-point:before {
-  content: '\e540';
-}
-.icon-system-building:before {
-  content: '\e541';
-}
-.icon-system-health-staff:before {
-  content: '\e542';
-}
+// .icon-system-edit:before { 
+//   content: "\e80f";
+// }
+// .icon-system-calendar:before { 
+//   content: "\e803";
+// }
+// .icon-system-clock:before {  
+//   content: "\e80a";
+// }
+// .icon-system-close:before {  
+//   content: "\e80b";
+// }
+// .icon-system-chevron-up:before {
+//   content: "\e809";
+// }
+// .icon-system-chevron-right:before {
+//   content: "\e808";
+// }
+// .icon-system-chevron-left:before {
+//   content: "\e807";
+// }
+// .icon-system-chevron-down:before {
+//   content: "\e806";
+// }
+// .icon-system-delete:before { 
+//   content: "\e80c";
+// }
+// .icon-system-placeholder:before {
+//   content: "\e817";
+// }
+// .icon-system-search:before { 
+//   content: "\e81a";
+// }
+// .icon-system-mail:before {
+//   content: "\e814";
+// }
+// .icon-system-phone:before {
+//   content: "\e816";
+// }
+// .icon-system-plus:before {
+//   content: "\e818";
+// }
+// .icon-system-user:before {
+//   content: "\e81c";
+// }
+// .icon-system-check:before { 
+//   content: "\e805";
+// }
+// .icon-system-calendar-2:before {
+//   content: "\e802";
+// }
+// .icon-system-download:before { 
+//   content: "\e80e";
+// }
+// .icon-system-menu:before { 
+//   content: '\e815';
+// }
+// .icon-system-share:before {
+//   content: '\e81b';
+// }
+// .icon-system-patogen:before {
+//   content: '\e500';
+// }
+// .icon-system-gender:before {
+//   content: '\e501';
+// }
+// .icon-system-alert:before {
+//   content: '\e502';
+// }
+// .icon-system-glucose-test:before {
+//   content: '\e503';
+// }
+// .icon-system-food-restriction:before {
+//   content: '\e504';
+// }
+// .icon-system-chat:before {
+//   content: '\e505';
+// }
+// .icon-system-faucet:before {
+//   content: '\e506';
+// }
+// .icon-system-health-book:before {
+//   content: '\e507';
+// }
+// .icon-system-framed-check:before {
+//   content: '\e508';
+// }
+// .icon-system-shield-check:before {
+//   content: '\e509';
+// }
+// .icon-system-nodes:before {
+//   content: '\e510';
+// }
+// .icon-system-gear:before {
+//   content: '\e511';
+// }
+// .icon-system-claw-machine:before {
+//   content: '\e513';
+// }
+// .icon-system-squared-check:before {
+//   content: '\e514';
+// }
+// .icon-system-clock-rush:before {
+//   content: '\e515';
+// }
+// .icon-system-documents-check:before {
+//   content: '\e516';
+// }
+// .icon-system-aim:before {
+//   content: '\e517';
+// }
+// .icon-system-agenda:before {
+//   content: '\e518';
+// }
+// .icon-system-heart-ekg:before {
+//   content: '\e519';
+// }
+// .icon-system-dynamite:before {
+//   content: '\e520';
+// }
+// .icon-system-cistern:before {
+//   content: '\e521';
+// }
+// .icon-system-sun:before {
+//   content: '\e522';
+// }
+// .icon-system-helmet:before {
+//   content: '\e523';
+// }
+// .icon-system-minerals:before {
+//   content: '\e524';
+// }
+// .icon-system-wheelchair:before {
+//   content: '\e525';
+// }
+// .icon-system-age-majority:before {
+//   content: '\e526';
+// }
+// .icon-system-pick:before {
+//   content: '\e527';
+// }
+// .icon-system-truck:before {
+//   content: '\e528';
+// }
+// .icon-system-pill:before {
+//   content: '\e529';
+// }
+// .icon-system-on-time-clock:before {
+//   content: '\e530';
+// }
+// .icon-system-user-id:before {
+//   content: '\e531';
+// }
+// .icon-system-medical-kit:before {
+//   content: '\e532';
+// }
+// .icon-system-hyssop-tube:before {
+//   content: '\e533';
+// }
+// .icon-system-drill:before {
+//   content: '\e534';
+// }
+// .icon-system-glasses:before {
+//   content: '\e535';
+// }
+// .icon-system-ambulance:before {
+//   content: '\e536';
+// }
+// .icon-system-giving-life:before {
+//   content: '\e537';
+// }
+// .icon-system-lightbulb:before {
+//   content: '\e538';
+// }
+// .icon-system-giving-status:before {
+//   content: '\e539';
+// }
+// .icon-system-on-point:before {
+//   content: '\e540';
+// }
+// .icon-system-building:before {
+//   content: '\e541';
+// }
+// .icon-system-health-staff:before {
+//   content: '\e542';
+// }
 
-/* Brand Icons */
+// /* Brand Icons */
 
-.icon-brand-facebook:before { 
-  content: "\e810";
-}
-.icon-brand-laboratory:before {  
-  content: "\e812";
-}
-.icon-brand-linkedin:before {
-  content: "\e813";
-}
-.icon-brand-billing:before {
-  content: "\e80d";
-}
-.icon-brand-feedback:before { 
-  content: '\e811';
-}
-.icon-brand-question-square:before { 
-  content: '\e819';
-}
-.icon-brand-chart:before { 
-  content: '\e804';
-}
-.icon-alert-square:before { 
-  content: '\e801';
-}
-.icon-alert-rounded:before {
-  content: '\e800';
-}
-.icon-brand-money:before {
-  content: '\e81d';
-}
+// .icon-brand-facebook:before { 
+//   content: "\e810";
+// }
+// .icon-brand-laboratory:before {  
+//   content: "\e812";
+// }
+// .icon-brand-linkedin:before {
+//   content: "\e813";
+// }
+// .icon-brand-billing:before {
+//   content: "\e80d";
+// }
+// .icon-brand-feedback:before { 
+//   content: '\e811';
+// }
+// .icon-brand-question-square:before { 
+//   content: '\e819';
+// }
+// .icon-brand-chart:before { 
+//   content: '\e804';
+// }
+// .icon-alert-square:before { 
+//   content: '\e801';
+// }
+// .icon-alert-rounded:before {
+//   content: '\e800';
+// }
+// .icon-brand-money:before {
+//   content: '\e81d';
+// }
