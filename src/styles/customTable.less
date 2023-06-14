@@ -1,0 +1,81 @@
+/* Header and Body custom table styling */
+
+.cmt-custom-table-header {
+  .center-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .align-item-center-start {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  h3 {
+    font-size: 14px;
+    font-family: "MarkProBold";
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+}
+
+.cmt-custom-table-body {
+  background-color: @gray-color__var-3;
+  p {
+    font-size: 14px;
+    word-wrap: break-word;
+    word-break: break-all;
+    &.error-text {
+      color: @error-color;
+    }
+    &.success-text {
+      color: @success-color;
+    }
+    &.disabled-text {
+      color: @gray-color__var-1;
+    }
+  }
+  .center-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .align-item-center {
+    display: flex;
+    align-items: center;
+  }
+  .align-item-center-start {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  [class^="icon-system"],
+  [class^="icon-brand"] {
+    color: @secondary-color;
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 991px) {
+    .hide-desktop {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    h3 {
+      font-size: 14px;
+      font-family: "MarkProBold";
+    }
+    p {
+      text-align: center;
+    }
+    .center-item,
+    .align-item-center-start {
+      display: block !important;
+    }
+  }
+}
