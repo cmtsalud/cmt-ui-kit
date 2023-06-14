@@ -1,6 +1,14 @@
 .cmt-pagination.ant-radio-group {
-  .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  .ant-radio-button-wrapper {
     color: @text-color-secondary;
     border-color: @text-color-secondary;
+  }
+
+  .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    color: @text-color;
+    border-color: @text-color-secondary;
+    &::before {
+      background-color: @text-color-secondary !important;
+    }
   }
 }
