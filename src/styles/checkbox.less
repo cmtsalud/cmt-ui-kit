@@ -4,6 +4,10 @@
     border-color: @secondary-color !important;
   }
 
+  .ant-checkbox:hover {
+    border-color: @secondary-color;
+  }
+
   .ant-checkbox-checked {
     &::after {
       border-color: @secondary-color;
@@ -18,6 +22,10 @@
   &.primary {
     .ant-checkbox-input:focus + .ant-checkbox-inner {
       border-color: @primary-color !important;
+    }
+
+    .ant-checkbox:hover {
+      border-color: @primary-color;
     }
 
     .ant-checkbox-checked {
@@ -35,6 +43,10 @@
   &.tertiary {
     .ant-checkbox-input:focus + .ant-checkbox-inner {
       border-color: @tertiary-color !important;
+    }
+
+    .ant-checkbox:hover {
+      border-color: @tertiary-color;
     }
 
     .ant-checkbox-checked {
