@@ -1,5 +1,9 @@
 .cmt-checkbox.ant-checkbox-wrapper { 
 
+  .ant-checkbox-input:focus + .ant-checkbox-inner {
+    border-color: @secondary-color !important;
+  }
+
   .ant-checkbox-checked {
     &::after {
       border-color: @secondary-color;
@@ -12,6 +16,10 @@
 
 
   &.primary {
+    .ant-checkbox-input:focus + .ant-checkbox-inner {
+      border-color: @primary-color !important;
+    }
+
     .ant-checkbox-checked {
       &::after {
         border-color: @primary-color !important;
@@ -25,6 +33,10 @@
 
 
   &.tertiary {
+    .ant-checkbox-input:focus + .ant-checkbox-inner {
+      border-color: @tertiary-color !important;
+    }
+
     .ant-checkbox-checked {
       &::after {
         border-color: @tertiary-color !important;
@@ -40,15 +52,15 @@
 
 
 
-.cmt-checkbox.ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner, .ant-checkbox-input:focus + .ant-checkbox-inner {
-  border-color: @secondary-color !important;
-}
+// .cmt-checkbox.ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner, .ant-checkbox-input:focus + .ant-checkbox-inner {
+//   border-color: @secondary-color !important;
+// }
 
 
-.cmt-checkbox.primary.ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner, .ant-checkbox-input:focus + .ant-checkbox-inner {
-  border-color: @primary-color !important;
-}
+// .cmt-checkbox.primary.ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner, .ant-checkbox-input:focus + .ant-checkbox-inner {
+//   border-color: @primary-color !important;
+// }
 
-.cmt-checkbox.tertiary.ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner, .ant-checkbox-input:focus + .ant-checkbox-inner {
-  border-color: @tertiary-color !important;
-}
+// .cmt-checkbox.tertiary.ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner, .ant-checkbox-input:focus + .ant-checkbox-inner {
+//   border-color: @tertiary-color !important;
+// }
