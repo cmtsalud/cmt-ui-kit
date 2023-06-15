@@ -3,7 +3,7 @@
   padding: 0 3.8vw;
   width: 100%;
   height: 66px;
-  background-color: @white;
+  background-color: @white !important;
   box-shadow: 1px 17px 11px -24px;
 
   .logo {
@@ -29,11 +29,15 @@
     display: flex;
     justify-content: flex-end;
     float: right;
-    width: 80% !important;
+    width: 100% !important;
     border: 0 !important;
     height: 66px;
+    background-color: @white !important;
     .ant-menu-item {
       border-bottom: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       a {
         font-family: "MarkPro";
         font-size: 14px;
