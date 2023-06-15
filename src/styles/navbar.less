@@ -16,7 +16,6 @@
     width: 140px;
     height: 40px;
     margin-top: 12px;
-    margin-left: 10px;
 
     @media screen and (max-width: 991px) {
       line-height: 55px !important;
@@ -25,79 +24,80 @@
     }
   }
 
-  .ant-menu {
-    display: flex;
-    justify-content: flex-end;
-    float: right;
+  .menu-wrapper {
     width: 100% !important;
-    border: 0 !important;
-    height: 66px;
-    background-color: @white !important;
-    .ant-menu-item {
-      border-bottom: none;
+    .ant-menu {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      a {
-        font-family: "MarkPro";
-        font-size: 14px;
-        color: @text-color;
-        &:hover {
-          color: @primary-color;
-        }
-        &[class*="active"] {
-          color: @primary-color;
-        }
-      }
-
-      &.ant-menu-item-selected {
-        a {
-          color: @primary-color;
-        }
-      }
-
-      .ant-avatar {
-        display: inline-block;
-        margin-left: 10px;
-      }
-    }
-
-  }
-
-  &.fixed {
-    position: fixed;
-    z-index: 1;
-  }
-
-  .ant-menu-horizontal > .ant-menu-item::after, .ant-menu-horizontal > .ant-menu-submenu::after {
-    border-bottom: none !important;
-  }
-
-  @media screen and (max-width: 991px) {
-    .menu-desktop {
-      display: none !important;
-    }
-  }
-
-  @media screen and (max-width: 991px) {
-    .menu-mobile-button {
+      justify-content: flex-end;
       float: right;
-      margin-top: 10px;
-      margin-right: -8px;
-      border: 0;
-      svg {
-        color: @primary-color;
-        font-size: 19px;
+      border: 0 !important;
+      height: 66px;
+      background-color: @white !important;
+      .ant-menu-item {
+        border-bottom: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+          font-family: "MarkPro";
+          font-size: 14px;
+          color: @text-color;
+          &:hover {
+            color: @primary-color;
+          }
+          &[class*="active"] {
+            color: @primary-color;
+          }
+        }
+  
+        &.ant-menu-item-selected {
+          a {
+            color: @primary-color;
+          }
+        }
+  
+        .ant-avatar {
+          display: inline-block;
+          margin-left: 10px;
+        }
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+
+      &.fixed {
+        position: fixed;
+        z-index: 1;
+      }
+    
+      .ant-menu-horizontal > .ant-menu-item::after, .ant-menu-horizontal > .ant-menu-submenu::after {
+        border-bottom: none !important;
+      }
+    
+      @media screen and (max-width: 991px) {
+        .menu-desktop {
+          display: none !important;
+        }
+        .menu-mobile-button {
+          float: right;
+          margin-top: 15px;
+          margin-right: 10px;
+          border: 0;
+          svg {
+            color: @primary-color;
+            font-size: 19px;
+          }
+        }
+      }
+    
+      @media screen and (min-width: 991px) {
+        .menu-mobile-button {
+          display: none;
+        }
       }
     }
   }
-
-  @media screen and (min-width: 991px) {
-    .menu-mobile-button {
-      display: none;
-    }
-  }
-
 }
 
 .ant-affix {
