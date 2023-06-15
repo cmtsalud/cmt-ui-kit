@@ -126,6 +126,7 @@
     .ant-avatar {
       display: inline-block;
       margin-left: 10px;
+      background-color: @primary-color__var-3;
     }
 
     .cmt-button.ant-btn {
@@ -157,32 +158,40 @@
         }
       }
     }
-    .ant-drawer-body {
-      background-color: @white;
-      padding: 0;
-      margin-bottom: 120px;
-      .cmt-button.ant-btn {
-        width: 70%;
-      }
-      .ant-menu-item,
-      .ant-menu-submenu-title {
-        font-size: 14px;
-      }
-      .ant-menu-item.ant-menu-item-only-child {
-        margin: 0;
-      }
-      .ant-menu-item-group {
-        background-color: @white;
-        &-title {
-          color: @primary-color;
-          font-family: "MarkProBold";
+    .ant-drawer-wrapper-body {
+      background-color: @white !important;
+      .ant-drawer-body {
+        background-color: @white !important;
+        padding: 0;
+        margin-bottom: 120px;
+
+        .ant-menu {
+          background-color: @white !important;
         }
-      }
-      .user-avatar-wrapper {
-        margin-top: 20px;
-        .ant-avatar {
-          display: inline-block;
-          margin-left: 10px;
+        .cmt-button.ant-btn {
+          width: 70%;
+        }
+        .ant-menu-item,
+        .ant-menu-submenu-title {
+          font-size: 14px;
+        }
+        .ant-menu-item.ant-menu-item-only-child {
+          margin: 0;
+        }
+        .ant-menu-item-group {
+          background-color: @white;
+          &-title {
+            color: @primary-color;
+            font-family: "MarkProBold";
+          }
+        }
+        .user-avatar-wrapper {
+          margin-top: 20px;
+          .ant-avatar {
+            display: inline-block;
+            margin-left: 10px;
+            background-color: @primary-color__var-3;
+          }
         }
       }
     }
