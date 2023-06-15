@@ -74,27 +74,26 @@
       .ant-menu-horizontal > .ant-menu-item::after, .ant-menu-horizontal > .ant-menu-submenu::after {
         border-bottom: none !important;
       }
+    }
     
-      @media screen and (max-width: 991px) {
-        .menu-desktop {
-          display: none !important;
-        }
-        .menu-mobile-button {
-          float: right;
-          margin-top: 15px;
-          margin-right: 10px;
-          border: 0;
-          svg {
-            color: @primary-color;
-            font-size: 19px;
-          }
+    @media screen and (max-width: 991px) {
+      .menu-desktop {
+        display: none !important;
+      }
+      .menu-mobile-button {
+        float: right;
+        margin-top: 15px;
+        margin-right: 10px;
+        border: 0;
+        svg {
+          color: @primary-color;
+          font-size: 19px;
         }
       }
-    
-      @media screen and (min-width: 991px) {
-        .menu-mobile-button {
-          display: none;
-        }
+    }
+    @media screen and (min-width: 991px) {
+      .menu-mobile-button {
+        display: none;
       }
     }
   }
