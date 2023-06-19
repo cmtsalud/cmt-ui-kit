@@ -18,37 +18,41 @@
   font-display: swap;
 }
 
+
 // @font-face {
-//   font-family: "untitled-font-1";
-//   src:url("~cmt-ui-kit/src/fonts/icons/Fontastic/fonts/fontastic.eot");
-//   src:url("~cmt-ui-kit/src/fonts/icons/Fontastic/fonts/fontastic.eot?#iefix") format("embedded-opentype"),
-//     url("~cmt-ui-kit/src/fonts/icons/Fontastic/fonts/fontastic.woff") format("woff"),
-//     url("~cmt-ui-kit/src/fonts/icons/Fontastic/fonts/fontastic.ttf") format("truetype"),
-//     url("~cmt-ui-kit/src/fonts/icons/Fontastic/fonts/fontastic.svg#untitled-font-1") format("svg");
+//   font-family: "icomoon";
+//   src:url("~cmt-ui-kit/src/fonts/icons/Icomoon/fonts/fontastic-icons.eot");
+//   src:url("~cmt-ui-kit/src/fonts/icons/Icomoon/fonts/fontastic-icons.eot?#iefix") format("embedded-opentype"),
+//     url("~cmt-ui-kit/src/fonts/icons/Icomoon/fonts/fontastic-icons.woff") format("woff"),
+//     url("~cmt-ui-kit/src/fonts/icons/Icomoon/fonts/fontastic-icons.ttf") format("truetype"),
+//     url("~cmt-ui-kit/src/fonts/icons/Icomoon/fonts/fontastic-icons.svg#fontastic-icons") format("svg");
 //   font-weight: normal;
 //   font-style: normal;
 //   font-size: 20px;
 // }
 
 @font-face {
-  font-family: "fontastic-icons";
-  src:url("~cmt-ui-kit/src/fonts/icons/Fontastic/fonts/fontastic-icons.eot");
-  src:url("~cmt-ui-kit/src/fonts/icons/Fontastic/fonts/fontastic-icons.eot?#iefix") format("embedded-opentype"),
-    url("~cmt-ui-kit/src/fonts/icons/Fontastic/fonts/fontastic-icons.woff") format("woff"),
-    url("~cmt-ui-kit/src/fonts/icons/Fontastic/fonts/fontastic-icons.ttf") format("truetype"),
-    url("~cmt-ui-kit/src/fonts/icons/Fontastic/fonts/fontastic-icons.svg#fontastic-icons") format("svg");
+  font-family: 'icomoon';
+  src:  url('~cmt-ui-kit/src/fonts/icons/Icomoon/fonts/icomoon.eot?mncy9y');
+  src:  url('~cmt-ui-kit/src/fonts/icons/Icomoon/fonts/icomoon.eot?mncy9y#iefix') format('embedded-opentype'),
+    url('~cmt-ui-kit/src/fonts/icons/Icomoon/fonts/icomoon.ttf?mncy9y') format('truetype'),
+    url('~cmt-ui-kit/src/fonts/icons/Icomoon/fonts/icomoon.woff?mncy9y') format('woff'),
+    url('~cmt-ui-kit/src/fonts/icons/Icomoon/fonts/icomoon.svg?mncy9y#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
   font-size: 20px;
 }
 
-
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-  font-family: "fontastic-icons" !important;
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
   font-style: normal;
   font-weight: normal;
-  speak: never;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
   display: block;
   text-decoration: inherit;
@@ -67,219 +71,484 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-system-age-majority:before {
-  content: "\65";
-}
-.icon-system-agenda:before {
-  content: "\66";
-}
-.icon-system-aim:before {
-  content: "\67";
-}
-.icon-system-alert:before {
-  content: "\68";
-}
-.icon-system-ambulance:before {
-  content: "\69";
-}
-.icon-brand-billing:before {
-  content: "\6a";
-}
-.icon-system-building:before {
-  content: "\6b";
-}
-.icon-system-calendar:before {
-  content: "\6c";
-}
-.icon-brand-chart:before {
-  content: "\6d";
-}
-.icon-system-chat:before {
-  content: "\6e";
-}
-.icon-system-check:before {
-  content: "\6f";
-}
-.icon-system-chevron-down:before {
-  content: "\70";
-}
-.icon-system-chevron-left:before {
-  content: "\71";
-}
-.icon-system-edit:before {
-  content: "\72";
-}
-.icon-system-dynamite:before {
-  content: "\73";
-}
-.icon-system-drill:before {
-  content: "\74";
-}
-.icon-system-download:before {
-  content: "\75";
-}
-.icon-system-documents-check:before {
-  content: "\76";
-}
-.icon-system-delete:before {
-  content: "\77";
-}
-.icon-system-close:before {
-  content: "\78";
-}
-.icon-system-clock-rush:before {
-  content: "\79";
-}
-.icon-system-clock:before {
-  content: "\7a";
-}
-.icon-system-claw-machine:before {
-  content: "\41";
-}
-.icon-system-cistern:before {
-  content: "\42";
-}
-.icon-system-chevron-up:before {
-  content: "\43";
-}
-.icon-system-chevron-right:before {
-  content: "\44";
-}
-.icon-brand-facebook:before {
-  content: "\45";
-}
-.icon-system-food-restriction:before {
-  content: "\46";
-}
-.icon-system-framed-check:before {
-  content: "\47";
-}
-.icon-system-gender:before {
-  content: "\48";
-}
-.icon-system-giving-life:before {
-  content: "\49";
-}
-.icon-system-giving-status:before {
-  content: "\4a";
-}
-.icon-system-glasses:before {
-  content: "\4b";
-}
-.icon-system-glucose-test:before {
-  content: "\4c";
-}
-.icon-system-gear:before {
-  content: "\4d";
-}
-.icon-system-health-book:before {
-  content: "\4e";
-}
-.icon-system-health-staff:before {
-  content: "\4f";
-}
-.icon-system-heart-ekg:before {
-  content: "\50";
-}
-.icon-system-helmet:before {
-  content: "\51";
-}
-.icon-system-patogen:before {
-  content: "\52";
-}
-.icon-system-on-time-clock:before {
-  content: "\53";
-}
-.icon-system-on-point:before {
-  content: "\54";
-}
-.icon-system-nodes:before {
-  content: "\55";
-}
-.icon-system-minerals:before {
-  content: "\56";
-}
-.icon-system-menu:before {
-  content: "\57";
-}
-.icon-system-medical-kit:before {
-  content: "\58";
-}
-.icon-system-mail:before {
-  content: "\59";
-}
-.icon-brand-linkedin:before {
-  content: "\5a";
-}
-.icon-system-lightbulb:before {
-  content: "\30";
-}
-.icon-system-lamppost:before {
-  content: "\31";
-}
-.icon-brand-laboratory:before {
-  content: "\32";
-}
-.icon-system-hyssop-tube:before {
-  content: "\33";
-}
-.icon-system-phone:before {
-  content: "\34";
-}
-.icon-system-pick:before {
-  content: "\35";
-}
-.icon-system-pill:before {
-  content: "\36";
-}
-.icon-system-placeholder:before {
-  content: "\37";
-}
-.icon-system-plus:before {
-  content: "\38";
-}
-.icon-system-search:before {
-  content: "\39";
-}
-.icon-system-share:before {
-  content: "\21";
-}
-.icon-system-shield-check:before {
-  content: "\22";
-}
-.icon-system-squared-check:before {
-  content: "\23";
-}
-.icon-system-sun:before {
-  content: "\24";
-}
-.icon-system-test-tube:before {
-  content: "\25";
-}
-.icon-system-truck:before {
-  content: "\26";
-}
-.icon-system-user:before {
-  content: "\27";
-}
-.icon-system-wheelchair:before {
-  content: "\28";
-}
-.icon-system-user-id:before {
-  content: "\29";
-}
-.icon-brand-question-square:before {
-  content: "\61";
-}
-.icon-brand-feedback:before {
-  content: "\62";
-}
-.icon-brand-money:before {
-  content: "\63";
+
+
+// .icon-system-age-majority:before {
+//   content: "\65";
+// }
+// .icon-system-agenda:before {
+//   content: "\66";
+// }
+// .icon-system-aim:before {
+//   content: "\67";
+// }
+// .icon-system-alert:before {
+//   content: "\68";
+// }
+// .icon-system-ambulance:before {
+//   content: "\69";
+// }
+// .icon-brand-billing:before {
+//   content: "\6a";
+// }
+// .icon-system-building:before {
+//   content: "\6b";
+// }
+// .icon-system-calendar:before {
+//   content: "\6c";
+// }
+// .icon-brand-chart:before {
+//   content: "\6d";
+// }
+// .icon-system-chat:before {
+//   content: "\6e";
+// }
+// .icon-system-check:before {
+//   content: "\6f";
+// }
+// .icon-system-chevron-down:before {
+//   content: "\70";
+// }
+// .icon-system-chevron-left:before {
+//   content: "\71";
+// }
+// .icon-system-edit:before {
+//   content: "\72";
+// }
+// .icon-system-dynamite:before {
+//   content: "\73";
+// }
+// .icon-system-drill:before {
+//   content: "\74";
+// }
+// .icon-system-download:before {
+//   content: "\75";
+// }
+// .icon-system-documents-check:before {
+//   content: "\76";
+// }
+// .icon-system-delete:before {
+//   content: "\77";
+// }
+// .icon-system-close:before {
+//   content: "\78";
+// }
+// .icon-system-clock-rush:before {
+//   content: "\79";
+// }
+// .icon-system-clock:before {
+//   content: "\7a";
+// }
+// .icon-system-claw-machine:before {
+//   content: "\41";
+// }
+// .icon-system-cistern:before {
+//   content: "\42";
+// }
+// .icon-system-chevron-up:before {
+//   content: "\43";
+// }
+// .icon-system-chevron-right:before {
+//   content: "\44";
+// }
+// .icon-brand-facebook:before {
+//   content: "\45";
+// }
+// .icon-system-food-restriction:before {
+//   content: "\46";
+// }
+// .icon-system-framed-check:before {
+//   content: "\47";
+// }
+// .icon-system-gender:before {
+//   content: "\48";
+// }
+// .icon-system-giving-life:before {
+//   content: "\49";
+// }
+// .icon-system-giving-status:before {
+//   content: "\4a";
+// }
+// .icon-system-glasses:before {
+//   content: "\4b";
+// }
+// .icon-system-glucose-test:before {
+//   content: "\4c";
+// }
+// .icon-system-gear:before {
+//   content: "\4d";
+// }
+// .icon-system-health-book:before {
+//   content: "\4e";
+// }
+// .icon-system-health-staff:before {
+//   content: "\4f";
+// }
+// .icon-system-heart-ekg:before {
+//   content: "\50";
+// }
+// .icon-system-helmet:before {
+//   content: "\51";
+// }
+// .icon-system-patogen:before {
+//   content: "\52";
+// }
+// .icon-system-on-time-clock:before {
+//   content: "\53";
+// }
+// .icon-system-on-point:before {
+//   content: "\54";
+// }
+// .icon-system-nodes:before {
+//   content: "\55";
+// }
+// .icon-system-minerals:before {
+//   content: "\56";
+// }
+// .icon-system-menu:before {
+//   content: "\57";
+// }
+// .icon-system-medical-kit:before {
+//   content: "\58";
+// }
+// .icon-system-mail:before {
+//   content: "\59";
+// }
+// .icon-brand-linkedin:before {
+//   content: "\5a";
+// }
+// .icon-system-lightbulb:before {
+//   content: "\30";
+// }
+// .icon-system-lamppost:before {
+//   content: "\31";
+// }
+// .icon-brand-laboratory:before {
+//   content: "\32";
+// }
+// .icon-system-hyssop-tube:before {
+//   content: "\33";
+// }
+// .icon-system-phone:before {
+//   content: "\34";
+// }
+// .icon-system-pick:before {
+//   content: "\35";
+// }
+// .icon-system-pill:before {
+//   content: "\36";
+// }
+// .icon-system-placeholder:before {
+//   content: "\37";
+// }
+// .icon-system-plus:before {
+//   content: "\38";
+// }
+// .icon-system-search:before {
+//   content: "\39";
+// }
+// .icon-system-share:before {
+//   content: "\21";
+// }
+// .icon-system-shield-check:before {
+//   content: "\22";
+// }
+// .icon-system-squared-check:before {
+//   content: "\23";
+// }
+// .icon-system-sun:before {
+//   content: "\24";
+// }
+// .icon-system-test-tube:before {
+//   content: "\25";
+// }
+// .icon-system-truck:before {
+//   content: "\26";
+// }
+// .icon-system-user:before {
+//   content: "\27";
+// }
+// .icon-system-wheelchair:before {
+//   content: "\28";
+// }
+// .icon-system-user-id:before {
+//   content: "\29";
+// }
+// .icon-brand-question-square:before {
+//   content: "\61";
+// }
+// .icon-brand-feedback:before {
+//   content: "\62";
+// }
+// .icon-brand-money:before {
+//   content: "\63";
+// }
+// .icon-alert-square:before {
+//   content: "\64";
+// }
+// .icon-alert-rounded:before {
+//   content: "\2a";
+// }
+
+
+.icon-alert-rounded:before {
+  content: "\e900";
 }
 .icon-alert-square:before {
-  content: "\64";
+  content: "\e901";
 }
-.icon-alert-rounded:before {
-  content: "\2a";
+.icon-brand-feedback:before {
+  content: "\e902";
+}
+.icon-brand-question-square:before {
+  content: "\e903";
+}
+.icon-system-age-majority:before {
+  content: "\e904";
+}
+.icon-system-agenda:before {
+  content: "\e905";
+}
+.icon-system-aim:before {
+  content: "\e906";
+}
+.icon-system-alert:before {
+  content: "\e907";
+}
+.icon-system-ambulance:before {
+  content: "\e908";
+}
+.icon-building:before {
+  content: "\e909";
+}
+.icon-chat:before {
+  content: "\e90a";
+}
+.icon-cistern:before {
+  content: "\e90b";
+}
+.icon-claw-machine:before {
+  content: "\e90c";
+}
+.icon-clock-rush:before {
+  content: "\e90d";
+}
+.icon-documents-check:before {
+  content: "\e90e";
+}
+.icon-drill:before {
+  content: "\e90f";
+}
+.icon-dynamite:before {
+  content: "\e910";
+}
+.icon-food-restriction:before {
+  content: "\e911";
+}
+.icon-framed-check:before {
+  content: "\e912";
+}
+.icon-gear:before {
+  content: "\e913";
+}
+.icon-gender:before {
+  content: "\e914";
+}
+.icon-giving-life:before {
+  content: "\e915";
+}
+.icon-giving-status:before {
+  content: "\e916";
+}
+.icon-glasses:before {
+  content: "\e917";
+}
+.icon-glucose-test:before {
+  content: "\e918";
+}
+.icon-health-book:before {
+  content: "\e919";
+}
+.icon-health-staff:before {
+  content: "\e91a";
+}
+.icon-heart-ekg:before {
+  content: "\e91b";
+}
+.icon-helmet:before {
+  content: "\e91c";
+}
+.icon-hyssop-tube:before {
+  content: "\e91d";
+}
+.icon-lamppost:before {
+  content: "\e91e";
+}
+.icon-lightbulb:before {
+  content: "\e91f";
+}
+.icon-medical-kit:before {
+  content: "\e920";
+}
+.icon-minerals:before {
+  content: "\e921";
+}
+.icon-nodes:before {
+  content: "\e922";
+}
+.icon-on-point:before {
+  content: "\e923";
+}
+.icon-on-time-clock:before {
+  content: "\e924";
+}
+.icon-patogen:before {
+  content: "\e925";
+}
+.icon-pick:before {
+  content: "\e926";
+}
+.icon-pill:before {
+  content: "\e927";
+}
+.icon-shield-check:before {
+  content: "\e928";
+}
+.icon-squared-check:before {
+  content: "\e929";
+}
+.icon-sun:before {
+  content: "\e92a";
+}
+.icon-test-tube:before {
+  content: "\e92b";
+}
+.icon-truck:before {
+  content: "\e92c";
+}
+.icon-user-id:before {
+  content: "\e92d";
+}
+.icon-wheelchair:before {
+  content: "\e92e";
+}
+.icon-billing .path1:before {
+  content: "\e92f";
+  color: rgb(91, 53, 109);
+}
+.icon-billing .path2:before {
+  content: "\e930";
+  margin-left: -1em;
+  color: rgb(172, 153, 181);
+}
+.icon-calendar:before {
+  content: "\e931";
+  color: #dc582a;
+}
+.icon-chart .path1:before {
+  content: "\e932";
+  color: rgb(48, 154, 128);
+}
+.icon-chart .path2:before {
+  content: "\e933";
+  margin-left: -1em;
+  color: rgb(48, 154, 128);
+}
+.icon-chart .path3:before {
+  content: "\e934";
+  margin-left: -1em;
+  color: rgb(150, 204, 191);
+}
+.icon-chart .path4:before {
+  content: "\e935";
+  margin-left: -1em;
+  color: rgb(150, 204, 191);
+}
+.icon-check:before {
+  content: "\e936";
+  color: #223a70;
+}
+.icon-chevron-down:before {
+  content: "\e937";
+  color: #223a70;
+}
+.icon-chevron-left:before {
+  content: "\e938";
+  color: #223a70;
+}
+.icon-chevron-right:before {
+  content: "\e939";
+  color: #223a70;
+}
+.icon-chevron-up:before {
+  content: "\e93a";
+  color: #223a70;
+}
+.icon-clock:before {
+  content: "\e93b";
+  color: #223a70;
+}
+.icon-close:before {
+  content: "\e93c";
+  color: #223a70;
+}
+.icon-delete:before {
+  content: "\e93d";
+  color: #223a70;
+}
+.icon-download:before {
+  content: "\e93e";
+}
+.icon-edit:before {
+  content: "\e93f";
+  color: #223a70;
+}
+.icon-facebook:before {
+  content: "\e940";
+}
+.icon-laboratory:before {
+  content: "\e941";
+}
+.icon-linkedin:before {
+  content: "\e942";
+}
+.icon-mail:before {
+  content: "\e943";
+  color: #223a70;
+}
+.icon-menu:before {
+  content: "\e944";
+}
+.icon-money .path1:before {
+  content: "\e945";
+  color: rgb(0, 0, 0);
+}
+.icon-money .path2:before {
+  content: "\e946";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-phone:before {
+  content: "\e947";
+  color: #223a70;
+}
+.icon-placeholder:before {
+  content: "\e948";
+  color: #223a70;
+}
+.icon-plus:before {
+  content: "\e949";
+  color: #223a70;
+}
+.icon-search:before {
+  content: "\e94a";
+  color: #223a70;
+}
+.icon-share:before {
+  content: "\e94b";
+  color: #dc582a;
+}
+.icon-user:before {
+  content: "\e94c";
+  color: #223a70;
 }
