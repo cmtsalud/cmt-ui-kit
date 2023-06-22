@@ -41,15 +41,29 @@
   .ant-radio-wrapper-checked {
     .ant-radio-checked {
       border: 1px solid @secondary-color !important;
-      
+
       &::after {
         background-color: @secondary-color !important;
       }
 
       .ant-radio-inner {
         border-color: @secondary-color !important;
+        &::after {
+          background-color: @secondary-color !important;
+        }
       }
     }
+  }
+
+  .ant-radio-checked {
+    border-color: @secondary-color !important;
+  }
+
+  .ant-radio-checked.ant-radio-inner {
+    border-color: @secondary-color !important;
+  }
+  .ant-radio-inner {
+    border-color: @secondary-color !important;
   }
 
   .ant-radio-wrapper:hover .ant-radio, .ant-radio:hover .ant-radio-inner, .ant-radio-input:focus + .ant-radio-inner {
