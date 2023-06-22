@@ -39,11 +39,16 @@
   }
 
   .ant-radio-wrapper-checked {
-    .ant-radio-checked .ant-radio-inner {
-      border: 1px solid @secondary-color;
-    }
-    .ant-radio-inner::after {
-      background-color: @secondary-color;
+    .ant-radio-checked {
+      border: 1px solid @secondary-color !important;
+      
+      &::after {
+        background-color: @secondary-color !important;
+      }
+
+      .ant-radio-inner {
+        border-color: @secondary-color !important;
+      }
     }
   }
 
