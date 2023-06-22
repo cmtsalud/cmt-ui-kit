@@ -27,3 +27,31 @@
     box-shadow: none !important;
   }
 }
+
+.cmt-radio.ant-radio-wrapper {
+  span {
+    font-size: 16px !important;
+    order: 1;
+  }
+
+  .ant-radio {
+    order: 2;
+  }
+
+  .ant-radio-wrapper-checked {
+    .ant-radio-checked .ant-radio-inner {
+      border: 1px solid @secondary-color;
+    }
+    .ant-radio-inner::after {
+      background-color: @secondary-color;
+    }
+  }
+
+  .ant-radio-wrapper:hover .ant-radio, .ant-radio:hover .ant-radio-inner, .ant-radio-input:focus + .ant-radio-inner {
+    border-color: @secondary-color !important;
+  }
+
+  .ant-radio-input:focus + .ant-radio-inner {
+    box-shadow: none !important;
+  }
+}
