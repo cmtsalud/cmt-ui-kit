@@ -1,4 +1,4 @@
-/*Radio button with secondary color and inverted order */
+/* Radio button with secondary color and inverted order */
 
 .cmt-radio.ant-radio-group {
   span {
@@ -26,34 +26,38 @@
   .ant-radio-input:focus + .ant-radio-inner {
     box-shadow: none !important;
   }
+}
 
-  &-left {
-    span {
-      order: 2;
-    }
+/* Radio button with secondary color and default antd order */
 
-    .ant-radio {
-      order: 1;
-    }
+.cmt-radio-left.ant-radio-group {
+  span {
+    order: 2;
+  }
 
-    .ant-radio-wrapper-checked {
-      .ant-radio-checked .ant-radio-inner {
-        border: 1px solid @secondary-color !important;
-      }
-      .ant-radio-inner::after {
-        background-color: @secondary-color !important;
-      }
+  .ant-radio {
+    order: 1;
+  }
+
+  .ant-radio-wrapper-checked {
+    .ant-radio-checked .ant-radio-inner {
+      border: 1px solid @secondary-color !important;
     }
-  
-    .ant-radio-wrapper:hover .ant-radio, .ant-radio:hover .ant-radio-inner, .ant-radio-input:focus + .ant-radio-inner {
-      border-color: @secondary-color !important;
-    }
-  
-    .ant-radio-input:focus + .ant-radio-inner {
-      box-shadow: none !important;
+    .ant-radio-inner::after {
+      background-color: @secondary-color !important;
     }
   }
+
+  .ant-radio-wrapper:hover .ant-radio, .ant-radio:hover .ant-radio-inner, .ant-radio-input:focus + .ant-radio-inner {
+    border-color: @secondary-color !important;
+  }
+
+  .ant-radio-input:focus + .ant-radio-inner {
+    box-shadow: none !important;
+  }
 }
+
+/* Radio button single with secondary color and inverted order */
 
 .cmt-radio.ant-radio-wrapper {
   span {
@@ -80,31 +84,33 @@
   .ant-radio-input:focus + .ant-radio-inner {
     box-shadow: none !important;
   }
+}
 
-  &-left {
-    span {
-      font-size: 16px !important;
-      order: 2;
-    }
-  
-    .ant-radio {
-      order: 1;
-    }
-  
-    .ant-radio-inner::after {
-      background-color: @secondary-color !important;
-    }
-  
-    .ant-radio-checked .ant-radio-inner {
-      border-color: @secondary-color !important;
-    }
-  
-    .ant-radio-wrapper:hover .ant-radio, .ant-radio:hover .ant-radio-inner, .ant-radio-input:focus + .ant-radio-inner {
-      border-color: @secondary-color !important;
-    }
-  
-    .ant-radio-input:focus + .ant-radio-inner {
-      box-shadow: none !important;
-    }
+/* Radio button single with secondary color and default antd order */
+
+.cmt-radio-left.ant-radio-wrapper {
+  span {
+    font-size: 16px !important;
+    order: 2;
+  }
+
+  .ant-radio {
+    order: 1;
+  }
+
+  .ant-radio-inner::after {
+    background-color: @secondary-color !important;
+  }
+
+  .ant-radio-checked .ant-radio-inner {
+    border-color: @secondary-color !important;
+  }
+
+  .ant-radio-wrapper:hover .ant-radio, .ant-radio:hover .ant-radio-inner, .ant-radio-input:focus + .ant-radio-inner {
+    border-color: @secondary-color !important;
+  }
+
+  .ant-radio-input:focus + .ant-radio-inner {
+    box-shadow: none !important;
   }
 }
