@@ -3,20 +3,19 @@
   padding: 0 3.8vw;
   width: 100%;
   height: 66px;
-  background-color: @white;
+  background-color: @white !important;
   box-shadow: 1px 17px 11px -24px;
 
   .logo {
     line-height: 64px;
     float: left;
-    background-image: url("~cmt-ui-kit/src/images/LogoCmtNaranjoCompleto.svg");
+    background-image: url("~cmt-ui-kit/src/images/LogoNaranjo2023.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     width: 140px;
     height: 40px;
     margin-top: 12px;
-    margin-left: 10px;
 
     @media screen and (max-width: 991px) {
       line-height: 55px !important;
@@ -25,75 +24,86 @@
     }
   }
 
-  .ant-menu {
-    display: flex;
-    justify-content: flex-end;
-    float: right;
-    width: 80% !important;
-    border: 0 !important;
-    height: 66px;
-    .ant-menu-item {
-      border-bottom: none;
-      a {
-        font-family: "MarkPro";
-        font-size: 14px;
-        color: @text-color;
-        &:hover {
-          color: @primary-color;
-        }
-        &[class*="active"] {
-          color: @primary-color;
-        }
-      }
-
-      &.ant-menu-item-selected {
-        a {
-          color: @primary-color;
-        }
-      }
-
-      .ant-avatar {
-        display: inline-block;
-        margin-left: 10px;
-      }
-    }
-
-  }
-
-  &.fixed {
-    position: fixed;
-    z-index: 1;
-  }
-
-  .ant-menu-horizontal > .ant-menu-item::after, .ant-menu-horizontal > .ant-menu-submenu::after {
-    border-bottom: none !important;
-  }
-
-  @media screen and (max-width: 991px) {
-    .menu-desktop {
-      display: none !important;
-    }
-  }
-
-  @media screen and (max-width: 991px) {
-    .menu-mobile-button {
+  .menu-wrapper {
+    width: 100% !important;
+    .ant-menu {
+      display: flex;
+      justify-content: flex-end;
       float: right;
-      margin-top: 10px;
-      margin-right: -8px;
-      border: 0;
-      svg {
-        color: @primary-color;
-        font-size: 19px;
+      border: 0 !important;
+      height: 66px;
+      background-color: @white !important;
+      .ant-menu-item {
+        border-bottom: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+          font-family: "MarkPro";
+          font-size: 14px;
+          color: @text-color;
+          &:hover {
+            color: @primary-color;
+          }
+          &[class*="active"] {
+            color: @primary-color;
+          }
+        }
+  
+        &.ant-menu-item-selected {
+          a {
+            color: @primary-color;
+          }
+        }
+  
+        .ant-avatar {
+          display: inline-block;
+          margin-left: 10px;
+          background-color: @primary-color__var-3;
+        }
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+
+      &.fixed {
+        position: fixed;
+        z-index: 1;
+      }
+    }
+
+    .ant-menu-horizontal > .ant-menu-item, .ant-menu-horizontal > .ant-menu-submenu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ant-menu-horizontal > .ant-menu-item::after, .ant-menu-horizontal > .ant-menu-submenu::after {
+      border-bottom: none !important;
+    }
+    
+    @media screen and (max-width: 991px) {
+      .menu-desktop {
+        display: none !important;
+      }
+      .menu-mobile-button {
+        float: right;
+        margin-top: 15px;
+        margin-right: 10px;
+        border: 0;
+        svg {
+          color: @primary-color;
+          font-size: 19px;
+        }
+      }
+    }
+    @media screen and (min-width: 991px) {
+      .menu-mobile-button {
+        display: none;
       }
     }
   }
-
-  @media screen and (min-width: 991px) {
-    .menu-mobile-button {
-      display: none;
-    }
-  }
-
 }
 
 .ant-affix {
@@ -122,6 +132,7 @@
     .ant-avatar {
       display: inline-block;
       margin-left: 10px;
+      background-color: @primary-color__var-3;
     }
 
     .cmt-button.ant-btn {
@@ -153,32 +164,40 @@
         }
       }
     }
-    .ant-drawer-body {
-      background-color: @white;
-      padding: 0;
-      margin-bottom: 120px;
-      .cmt-button.ant-btn {
-        width: 70%;
-      }
-      .ant-menu-item,
-      .ant-menu-submenu-title {
-        font-size: 14px;
-      }
-      .ant-menu-item.ant-menu-item-only-child {
-        margin: 0;
-      }
-      .ant-menu-item-group {
-        background-color: @white;
-        &-title {
-          color: @primary-color;
-          font-family: "MarkProBold";
+    .ant-drawer-wrapper-body {
+      background-color: @white !important;
+      .ant-drawer-body {
+        background-color: @white !important;
+        padding: 0;
+        margin-bottom: 120px;
+
+        .ant-menu {
+          background-color: @white !important;
         }
-      }
-      .user-avatar-wrapper {
-        margin-top: 20px;
-        .ant-avatar {
-          display: inline-block;
-          margin-left: 10px;
+        .cmt-button.ant-btn {
+          width: 70%;
+        }
+        .ant-menu-item,
+        .ant-menu-submenu-title {
+          font-size: 14px;
+        }
+        .ant-menu-item.ant-menu-item-only-child {
+          margin: 0;
+        }
+        .ant-menu-item-group {
+          background-color: @white;
+          &-title {
+            color: @primary-color;
+            font-family: "MarkProBold";
+          }
+        }
+        .user-avatar-wrapper {
+          margin-top: 20px;
+          .ant-avatar {
+            display: inline-block;
+            margin-left: 10px;
+            background-color: @primary-color__var-3;
+          }
         }
       }
     }
