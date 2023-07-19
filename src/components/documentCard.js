@@ -152,12 +152,12 @@ export default ({
             },
             validateNumber
           ]}
-          disabled={disabled}
         >
           <Select
             className={'cmt-select ' + classNameStyle}
             placeholder='Seleccione tipo de documento'
             onChange={handleDocumentType}
+            disabled={disabled}
           >
             {
               documentType[type][countryCode].map((method, index) => {

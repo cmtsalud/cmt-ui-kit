@@ -198,12 +198,12 @@ var documentCard = (function (_ref) {
     rules: [{
       required: !optional,
       message: 'Tipo de documento es requerido'
-    }, validateNumber],
-    disabled: disabled
+    }, validateNumber]
   }, /*#__PURE__*/React__default["default"].createElement(antd.Select, {
     className: 'cmt-select ' + classNameStyle,
     placeholder: "Seleccione tipo de documento",
-    onChange: handleDocumentType
+    onChange: handleDocumentType,
+    disabled: disabled
   }, documentType[type][countryCode].map(function (method, index) {
     return /*#__PURE__*/React__default["default"].createElement(Option, {
       key: index,
