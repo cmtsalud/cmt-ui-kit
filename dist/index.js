@@ -221,13 +221,13 @@ var documentCard = (function (_ref) {
       min: 6,
       message: ''
     }, validateNumber],
-    className: "mb-0",
-    disabled: disabled
+    className: "mb-0"
   }, /*#__PURE__*/React__default["default"].createElement(antd.Input, {
     className: 'cmt-input ' + classNameStyle,
     placeholder: placeholderInput(),
     onChange: handleDocumentNumber,
-    onBlur: handleOnDocumentNumberBlur
+    onBlur: handleOnDocumentNumberBlur,
+    disabled: disabled
   }))));
 });
 
@@ -285,8 +285,7 @@ var ReactPhone = function ReactPhone(_ref) {
           }
         }
       };
-    }],
-    disabled: disabled
+    }]
   }, /*#__PURE__*/React__default["default"].createElement(PhoneInput__default["default"], {
     country: countryCode && countryCode.toLowerCase(),
     id: formName ? formName : 'phone',
@@ -303,7 +302,8 @@ var ReactPhone = function ReactPhone(_ref) {
     },
     prefix: "+",
     inputClass: "search-phone-class",
-    onChange: onChangeInsidePhone
+    onChange: onChangeInsidePhone,
+    disabled: disabled
   }));
 };
 var formatPhone = function formatPhone(phone, countryCode) {

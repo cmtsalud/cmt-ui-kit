@@ -92,7 +92,6 @@ const ReactPhone = ({
           }
         })
       ]}
-      disabled={disabled}
     >
       <PhoneInput
         country={countryCode && countryCode.toLowerCase()}
@@ -109,6 +108,7 @@ const ReactPhone = ({
         prefix="+"
         inputClass="search-phone-class"
         onChange={onChangeInsidePhone}
+        disabled={disabled}
       />
     </Form.Item>
   )

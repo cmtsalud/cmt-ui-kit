@@ -186,13 +186,13 @@ export default ({
             validateNumber
           ]}
           className="mb-0"
-          disabled={disabled}
         >
           <Input
             className={'cmt-input ' + classNameStyle}
             placeholder={placeholderInput()}
             onChange={handleDocumentNumber}
             onBlur={handleOnDocumentNumberBlur}
+            disabled={disabled}
           />
         </Form.Item>
       </Col>
