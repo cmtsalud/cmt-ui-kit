@@ -12,7 +12,8 @@ export default ({
   form,
   classNameStyle,
   optional = false,
-  type = 'all'
+  type = 'all',
+  disabled = false,
 }) => {
   const documentType = {
     person: {
@@ -151,6 +152,7 @@ export default ({
             },
             validateNumber
           ]}
+          disabled={disabled}
         >
           <Select
             className={'cmt-select ' + classNameStyle}
@@ -184,6 +186,7 @@ export default ({
             validateNumber
           ]}
           className="mb-0"
+          disabled={disabled}
         >
           <Input
             className={'cmt-input ' + classNameStyle}

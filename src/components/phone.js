@@ -16,7 +16,8 @@ const ReactPhone = ({
   onChangePhone,
   optional,
   labelText,
-  formName
+  formName,
+  disabled = false,
 }) => {
 
   const mostChosenCountries = [
@@ -91,6 +92,7 @@ const ReactPhone = ({
           }
         })
       ]}
+      disabled={disabled}
     >
       <PhoneInput
         country={countryCode && countryCode.toLowerCase()}
