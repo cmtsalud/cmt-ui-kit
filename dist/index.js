@@ -44,7 +44,9 @@ var documentCard = (function (_ref) {
     _ref$optional = _ref.optional,
     optional = _ref$optional === void 0 ? false : _ref$optional,
     _ref$type = _ref.type,
-    type = _ref$type === void 0 ? 'all' : _ref$type;
+    type = _ref$type === void 0 ? 'all' : _ref$type,
+    _ref$disabled = _ref.disabled,
+    disabled = _ref$disabled === void 0 ? false : _ref$disabled;
   var documentType = {
     person: {
       PE: [{
@@ -200,7 +202,8 @@ var documentCard = (function (_ref) {
   }, /*#__PURE__*/React__default["default"].createElement(antd.Select, {
     className: 'cmt-select ' + classNameStyle,
     placeholder: "Seleccione tipo de documento",
-    onChange: handleDocumentType
+    onChange: handleDocumentType,
+    disabled: disabled
   }, documentType[type][countryCode].map(function (method, index) {
     return /*#__PURE__*/React__default["default"].createElement(Option, {
       key: index,
@@ -223,11 +226,12 @@ var documentCard = (function (_ref) {
     className: 'cmt-input ' + classNameStyle,
     placeholder: placeholderInput(),
     onChange: handleDocumentNumber,
-    onBlur: handleOnDocumentNumberBlur
+    onBlur: handleOnDocumentNumberBlur,
+    disabled: disabled
   }))));
 });
 
-__$styleInject("/* Colors */\n@font-face {\n  font-family: \"MarkPro\";\n  src: url(\"~cmt-ui-kit/src/fonts/MarkPro/MarkPro.woff\") format(\"woff\"), url(\"~cmt-ui-kit/src/fonts/MarkPro/MarkPro.woff2\") format(\"woff2\");\n  font-weight: normal;\n  font-size: normal;\n  font-display: swap;\n}\n@font-face {\n  font-family: \"MarkProBold\";\n  src: url(\"~cmt-ui-kit/src/fonts/MarkProBold/MarkPro-Bold.woff\") format(\"woff\"), url(\"~cmt-ui-kit/src/fonts/MarkProBold/MarkPro-Bold.woff2\") format(\"woff2\");\n  font-weight: bold;\n  font-size: normal;\n  font-display: swap;\n}\n@font-face {\n  font-family: \"fontello\";\n  src: url(\"~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.eot?12700268\");\n  src: url(\"~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.eot?12700268#iefix\") format(\"embedded-opentype\"), url(\"~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.woff2?12700268\") format(\"woff2\"), url(\"~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.woff?12700268\") format(\"woff\"), url(\"~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.ttf?12700268\") format(\"truetype\"), url(\"~cmt-ui-kit/src/fonts/icons/Fontello/font/fontello.svg?12700268#fontello\") format(\"svg\");\n  font-weight: normal;\n  font-style: normal;\n  font-size: 20px;\n}\n[class^=\"icon-\"]:before,\n[class*=\" icon-\"]:before {\n  font-family: \"fontello\" !important;\n  font-style: normal;\n  font-weight: normal;\n  speak: never;\n  display: inline-block;\n  text-decoration: inherit;\n  width: 1em;\n  margin-right: 0.2em;\n  text-align: center;\n  /* For safety - reset parent styles, that can break glyph codes*/\n  font-variant: normal;\n  text-transform: none;\n  /* fix buttons height, for twitter bootstrap */\n  line-height: 1em;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n/* System Icons */\n.icon-system-edit:before {\n  content: \"\\e80f\";\n}\n.icon-system-calendar:before {\n  content: \"\\e803\";\n}\n.icon-system-clock:before {\n  content: \"\\e80a\";\n}\n.icon-system-close:before {\n  content: \"\\e80b\";\n}\n.icon-system-chevron-up:before {\n  content: \"\\e809\";\n}\n.icon-system-chevron-right:before {\n  content: \"\\e808\";\n}\n.icon-system-chevron-left:before {\n  content: \"\\e807\";\n}\n.icon-system-chevron-down:before {\n  content: \"\\e806\";\n}\n.icon-system-delete:before {\n  content: \"\\e80c\";\n}\n.icon-system-placeholder:before {\n  content: \"\\e817\";\n}\n.icon-system-search:before {\n  content: \"\\e81a\";\n}\n.icon-system-mail:before {\n  content: \"\\e814\";\n}\n.icon-system-phone:before {\n  content: \"\\e816\";\n}\n.icon-system-plus:before {\n  content: \"\\e818\";\n}\n.icon-system-user:before {\n  content: \"\\e81c\";\n}\n.icon-system-check:before {\n  content: \"\\e805\";\n}\n.icon-system-calendar-2:before {\n  content: \"\\e802\";\n}\n.icon-system-download:before {\n  content: \"\\e80e\";\n}\n.icon-system-menu:before {\n  content: '\\e815';\n}\n.icon-system-share:before {\n  content: '\\e81b';\n}\n/* Brand Icons */\n.icon-brand-facebook:before {\n  content: \"\\e810\";\n}\n.icon-brand-laboratory:before {\n  content: \"\\e812\";\n}\n.icon-brand-linkedin:before {\n  content: \"\\e813\";\n}\n.icon-brand-billing:before {\n  content: \"\\e80d\";\n}\n.icon-brand-feedback:before {\n  content: '\\e811';\n}\n.icon-brand-question-square:before {\n  content: '\\e819';\n}\n.icon-brand-chart:before {\n  content: '\\e804';\n}\n.icon-alert-square:before {\n  content: '\\e801';\n}\n.icon-alert-rounded:before {\n  content: '\\e800';\n}\n.icon-brand-money:before {\n  content: '\\e81d';\n}\n.search-phone-class {\n  font-family: 'MarkPro';\n  font-size: 16px;\n  width: 100% !important;\n  border: 1px solid #E4E4E4 !important;\n}\n.search-phone-class::placeholder {\n  color: #BEBEBE;\n}\n");
+__$styleInject("/* Colors */\n.search-phone-class {\n  font-family: 'MarkPro';\n  font-size: 16px;\n  width: 100% !important;\n  border: 1px solid #E4E4E4 !important;\n}\n.search-phone-class::placeholder {\n  color: #BEBEBE;\n}\n");
 
 var _require = require('libphonenumber-js'),
   parsePhoneNumber = _require.parsePhoneNumber;
@@ -240,7 +244,9 @@ var ReactPhone = function ReactPhone(_ref) {
     onChangePhone = _ref.onChangePhone,
     optional = _ref.optional,
     labelText = _ref.labelText,
-    formName = _ref.formName;
+    formName = _ref.formName,
+    _ref$disabled = _ref.disabled,
+    disabled = _ref$disabled === void 0 ? false : _ref$disabled;
   var mostChosenCountries = ["cl", "ve", "pe", "co", "bo", "ec", "ht", "es", "ar", "br", "mx", "us", "cz", "fr", "cu", "cn", "do", "ca", "de", "pt", "at", "au", "ro", "py", "it", "nl", "pl", "gb", "uy"];
   var onChangeInsidePhone = function onChangeInsidePhone(value) {
     if (onChangePhone) {
@@ -296,7 +302,8 @@ var ReactPhone = function ReactPhone(_ref) {
     },
     prefix: "+",
     inputClass: "search-phone-class",
-    onChange: onChangeInsidePhone
+    onChange: onChangeInsidePhone,
+    disabled: disabled
   }));
 };
 var formatPhone = function formatPhone(phone, countryCode) {

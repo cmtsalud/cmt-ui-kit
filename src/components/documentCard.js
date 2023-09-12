@@ -12,7 +12,8 @@ export default ({
   form,
   classNameStyle,
   optional = false,
-  type = 'all'
+  type = 'all',
+  disabled = false,
 }) => {
   const documentType = {
     person: {
@@ -156,6 +157,7 @@ export default ({
             className={'cmt-select ' + classNameStyle}
             placeholder='Seleccione tipo de documento'
             onChange={handleDocumentType}
+            disabled={disabled}
           >
             {
               documentType[type][countryCode].map((method, index) => {
@@ -190,6 +192,7 @@ export default ({
             placeholder={placeholderInput()}
             onChange={handleDocumentNumber}
             onBlur={handleOnDocumentNumberBlur}
+            disabled={disabled}
           />
         </Form.Item>
       </Col>

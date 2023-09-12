@@ -16,7 +16,8 @@ const ReactPhone = ({
   onChangePhone,
   optional,
   labelText,
-  formName
+  formName,
+  disabled = false,
 }) => {
 
   const mostChosenCountries = [
@@ -107,6 +108,7 @@ const ReactPhone = ({
         prefix="+"
         inputClass="search-phone-class"
         onChange={onChangeInsidePhone}
+        disabled={disabled}
       />
     </Form.Item>
   )
