@@ -69,15 +69,16 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icons/Icomoon/icomoon.eot?1vuft5');
-  src:  url('../fonts/icons/Icomoon/icomoon.eot?1vuft5#iefix') format('embedded-opentype'),
-    url('../fonts/icons/Icomoon/icomoon.ttf?1vuft5') format('truetype'),
-    url('../fonts/icons/Icomoon/icomoon.woff?1vuft5') format('woff'),
-    url('../fonts/icons/Icomoon/icomoon.svg?1vuft5#icomoon') format('svg');
+  src:  url('~cmt-ui-kit/src/fonts/icons/Icomoon/icomoon.eot?o0r8qp');
+  src:  url('~cmt-ui-kit/src/fonts/icons/Icomoon/icomoon.eot?o0r8qp#iefix') format('embedded-opentype'),
+    url('~cmt-ui-kit/src/fonts/icons/Icomoon/icomoon.ttf?o0r8qp') format('truetype'),
+    url('~cmt-ui-kit/src/fonts/icons/Icomoon/icomoon.woff?o0r8qp') format('woff'),
+    url('~cmt-ui-kit/src/fonts/icons/Icomoon/icomoon.svg?o0r8qp#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
+
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -88,108 +89,21 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-// /* System Icons */
-
-// .icon-system-edit:before { 
-//   content: "\0033";
-// }
-// .icon-system-calendar:before { 
-//   content: "\0073";
-// }
-// .icon-system-clock:before {  
-//   content: "\007a";
-// }
-// .icon-system-close:before {  
-//   content: "\0030";
-// }
-// .icon-system-chevron-up:before {
-//   content: "\0079";
-// }
-// .icon-system-chevron-right:before {
-//   content: "\e808";
-// }
-// .icon-system-chevron-left:before {
-//   content: "\0078";
-// }
-// .icon-system-chevron-down:before {
-//   content: "\0076";
-// }
-// .icon-system-delete:before { 
-//   content: "\0031";
-// }
-// .icon-system-placeholder:before {
-//   content: "\0022";
-// }
-// .icon-system-search:before { 
-//   content: "\0024";
-// }
-// .icon-system-mail:before {
-//   content: "\0037";
-// }
-// .icon-system-phone:before {
-//   content: "\0021";
-// }
-// .icon-system-plus:before {
-//   content: "\0023";
-// }
-// .icon-system-user:before {
-//   content: "\0026";
-// }
-// .icon-system-check:before { 
-//   content: "\0075";
-// }
-// .icon-system-calendar-2:before {
-//   content: "\0073";
-// }
-// .icon-system-download:before { 
-//   content: "\0032";
-// }
-// .icon-system-menu:before { 
-//   content: '\0038';
-// }
-// .icon-system-share:before {
-//   content: '\0025';
-// }
-
-
-// /* Brand Icons */
-
-// .icon-brand-facebook:before { 
-//   content: "\0034";
-// }
-// .icon-brand-laboratory:before {  
-//   content: "\0035";
-// }
-// .icon-brand-linkedin:before {
-//   content: "\0036";
-// }
-// .icon-brand-billing:before {
-//   content: "\0072";
-// }
-// .icon-brand-feedback:before { 
-//   content: '\0070';
-// }
-// .icon-brand-question-square:before { 
-//   content: '\0071';
-// }
-// .icon-brand-chart:before { 
-//   content: '\0074';
-// }
-// .icon-alert-square:before { 
-//   content: '\006f';
-// }
-// .icon-alert-rounded:before {
-//   content: '\006e';
-// }
-// .icon-brand-money:before {
-//   content: '\0039';
-// }
 
 .icon-alert-rounded:before {
   content: "\e900";
@@ -512,3 +426,101 @@
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
+
+
+// /* System Icons */
+
+// .icon-system-edit:before { 
+//   content: "\0033";
+// }
+// .icon-system-calendar:before { 
+//   content: "\0073";
+// }
+// .icon-system-clock:before {  
+//   content: "\007a";
+// }
+// .icon-system-close:before {  
+//   content: "\0030";
+// }
+// .icon-system-chevron-up:before {
+//   content: "\0079";
+// }
+// .icon-system-chevron-right:before {
+//   content: "\e808";
+// }
+// .icon-system-chevron-left:before {
+//   content: "\0078";
+// }
+// .icon-system-chevron-down:before {
+//   content: "\0076";
+// }
+// .icon-system-delete:before { 
+//   content: "\0031";
+// }
+// .icon-system-placeholder:before {
+//   content: "\0022";
+// }
+// .icon-system-search:before { 
+//   content: "\0024";
+// }
+// .icon-system-mail:before {
+//   content: "\0037";
+// }
+// .icon-system-phone:before {
+//   content: "\0021";
+// }
+// .icon-system-plus:before {
+//   content: "\0023";
+// }
+// .icon-system-user:before {
+//   content: "\0026";
+// }
+// .icon-system-check:before { 
+//   content: "\0075";
+// }
+// .icon-system-calendar-2:before {
+//   content: "\0073";
+// }
+// .icon-system-download:before { 
+//   content: "\0032";
+// }
+// .icon-system-menu:before { 
+//   content: '\0038';
+// }
+// .icon-system-share:before {
+//   content: '\0025';
+// }
+
+
+// /* Brand Icons */
+
+// .icon-brand-facebook:before { 
+//   content: "\0034";
+// }
+// .icon-brand-laboratory:before {  
+//   content: "\0035";
+// }
+// .icon-brand-linkedin:before {
+//   content: "\0036";
+// }
+// .icon-brand-billing:before {
+//   content: "\0072";
+// }
+// .icon-brand-feedback:before { 
+//   content: '\0070';
+// }
+// .icon-brand-question-square:before { 
+//   content: '\0071';
+// }
+// .icon-brand-chart:before { 
+//   content: '\0074';
+// }
+// .icon-alert-square:before { 
+//   content: '\006f';
+// }
+// .icon-alert-rounded:before {
+//   content: '\006e';
+// }
+// .icon-brand-money:before {
+//   content: '\0039';
+// }
