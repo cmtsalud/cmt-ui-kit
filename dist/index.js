@@ -269,7 +269,7 @@ var ReactPhone = function ReactPhone(_ref) {
           if (optional && (!value || value === '' || value.length <= 4)) {
             return Promise.resolve();
           }
-          if (!optional && value >= 4) {
+          if (!optional && value && value >= 4) {
             var fieldValue = value;
             if (!fieldValue.includes('+')) {
               fieldValue = "+".concat(fieldValue);
@@ -278,6 +278,7 @@ var ReactPhone = function ReactPhone(_ref) {
             if (parsedValue && parsedValue.isPossible()) {
               return Promise.resolve();
             }
+            return Promise.reject(new Error('Teléfono incorrecto. Revisa el prefijo y/o dígitos.'));
           }
           return Promise.reject(new Error('Teléfono incorrecto. Revisa el prefijo y/o dígitos.'));
         }
