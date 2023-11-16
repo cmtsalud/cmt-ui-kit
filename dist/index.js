@@ -268,7 +268,7 @@ var ReactPhone = function ReactPhone(_ref) {
         validator: function validator(_, value) {
           if (optional && (!value || value === '' || value.length <= 4)) {
             return Promise.resolve();
-          } else {
+          } else if (value && value.length >= 4) {
             var fieldValue = value;
             if (!fieldValue.includes('+')) {
               fieldValue = "+".concat(fieldValue);

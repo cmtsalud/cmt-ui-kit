@@ -71,15 +71,15 @@ const ReactPhone = ({
           message: 'Teléfono es requerido'
         },
         ({ getFieldValue }) => ({
-          validator(_, value) {
+          validator: function validator(_, value) {
             if (optional && (!value || value === '' || value.length <= 4)) {
               return Promise.resolve();
-            } else {
-              let fieldValue = value;
+            } else if (value && value.length >= 4) {
+              var fieldValue = value;
               if (!fieldValue.includes('+')) {
-                fieldValue = `+${fieldValue}`;
+                fieldValue = "+".concat(fieldValue);
               }
-              let parsedValue = parsePhoneNumber(fieldValue);
+              var parsedValue = parsePhoneNumber(fieldValue);
               if (parsedValue && parsedValue.isPossible()) {
                 return Promise.resolve();
               }
