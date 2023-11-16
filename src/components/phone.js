@@ -70,11 +70,12 @@ const ReactPhone = ({
           required: !optional,
           message: 'Teléfono es requerido'
         },
-        ({ getFieldValue }) => ({
+        () => ({
           validator(_, value) {
             if (optional && (!value || value === '' || value.length <= 4)) {
               return Promise.resolve();
-            } else {
+            } 
+            if (!optional && value) {
               let fieldValue = value;
               if (!fieldValue.includes('+')) {
                 fieldValue = `+${fieldValue}`;;
