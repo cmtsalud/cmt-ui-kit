@@ -74,7 +74,9 @@ const ReactPhone = ({
           validator: function validator(_, value) {
             if (optional && (!value || value === '' || value.length <= 4)) {
               return Promise.resolve();
-            } else {
+            }
+            
+            if (!optional && value >= 4) {
               var fieldValue = value;
               if (!fieldValue.includes('+')) {
                 fieldValue = "+".concat(fieldValue);
@@ -84,6 +86,7 @@ const ReactPhone = ({
                 return Promise.resolve();
               }
             }
+
             return Promise.reject(new Error('Teléfono incorrecto. Revisa el prefijo y/o dígitos.'));
           }
         })
