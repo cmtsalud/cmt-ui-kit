@@ -278,7 +278,7 @@ var ReactPhone = function ReactPhone(_ref) {
               return Promise.resolve();
             }
           }
-          if (optional) {
+          if (optional && (!value || value === '' || value.length === 0)) {
             return Promise.resolve();
           } else {
             return Promise.reject(new Error('Teléfono incorrecto. Revisa el prefijo y/o dígitos.'));
