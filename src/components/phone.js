@@ -72,12 +72,12 @@ const ReactPhone = ({
         },
         ({ getFieldValue }) => ({
           validator(_, value) {
-            if (optional && (!value || value === '' || value.length === 0)) {
+            if (optional && (!value || value === '' || value.length <= 4)) {
               return Promise.resolve();
             } else {
               let fieldValue = value;
               if (!fieldValue.includes('+')) {
-                fieldValue = `+${fieldValue}`;;
+                fieldValue = `+${fieldValue}`;
               }
               let parsedValue = parsePhoneNumber(fieldValue);
               if (parsedValue && parsedValue.isPossible()) {

@@ -266,7 +266,7 @@ var ReactPhone = function ReactPhone(_ref) {
       _ref2.getFieldValue;
       return {
         validator: function validator(_, value) {
-          if (optional && (!value || value === '' || value.length === 0)) {
+          if (optional && (!value || value === '' || value.length <= 4)) {
             return Promise.resolve();
           } else {
             var fieldValue = value;
