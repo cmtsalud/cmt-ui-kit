@@ -262,8 +262,7 @@ var ReactPhone = function ReactPhone(_ref) {
     rules: [{
       required: !optional,
       message: 'Teléfono es requerido'
-    }, function (_ref2) {
-      _ref2.getFieldValue;
+    }, function () {
       return {
         validator: function validator(_, value) {
           if (optional && (!value || value === '' || value.length <= 4)) {

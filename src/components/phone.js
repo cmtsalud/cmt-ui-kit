@@ -77,7 +77,7 @@ const ReactPhone = ({
             } else {
               let fieldValue = value;
               if (!fieldValue.includes('+')) {
-                fieldValue = `+${fieldValue}`;;
+                fieldValue = `+${fieldValue}`;
               }
               let parsedValue = parsePhoneNumber(fieldValue);
               if (parsedValue && parsedValue.isPossible()) {
