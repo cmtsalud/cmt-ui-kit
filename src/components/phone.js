@@ -71,23 +71,19 @@ const ReactPhone = ({
           message: 'Teléfono es requerido'
         },
         ({ getFieldValue }) => ({
-          validator(_, value) {
+          validator: function validator(_, value) {
             if (optional && (!value || value === '' || value.length <= 4)) {
               return Promise.resolve();
-            }
-            if (!optional && (value && value >= 4)) {
+            } else if (value && value.length >= 4) {
               var fieldValue = value;
               if (!fieldValue.includes('+')) {
-                fieldValue = `+${fieldValue}`;
+                fieldValue = "+".concat(fieldValue);
               }
-              let parsedValue = parsePhoneNumber(fieldValue);
+              var parsedValue = parsePhoneNumber(fieldValue);
               if (parsedValue && parsedValue.isPossible()) {
                 return Promise.resolve();
-              } else {
-                return Promise.reject(new Error('Teléfono incorrecto. Revisa el prefijo y/o dígitos.'));
               }
             }
-
             return Promise.reject(new Error('Teléfono incorrecto. Revisa el prefijo y/o dígitos.'));
           }
         })
