@@ -70,8 +70,8 @@ const ReactPhone = ({
           required: !optional,
           message: 'Teléfono es requerido'
         },
-        () => ({
-          validator: function validator(_, value) {
+        ({ getFieldValue }) => ({
+          validator(_, value) {
             if (optional && (!value || value === '' || value.length <= 4)) {
               return Promise.resolve();
             }
@@ -79,9 +79,9 @@ const ReactPhone = ({
             if (!optional && value >= 4) {
               var fieldValue = value;
               if (!fieldValue.includes('+')) {
-                fieldValue = "+".concat(fieldValue);
+                fieldValue = `+${fieldValue}`;
               }
-              var parsedValue = parsePhoneNumber(fieldValue);
+              let parsedValue = parsePhoneNumber(fieldValue);
               if (parsedValue && parsedValue.isPossible()) {
                 return Promise.resolve();
               }
