@@ -75,7 +75,6 @@ const ReactPhone = ({
             if (optional && (!value || value === '' || value.length <= 4)) {
               return Promise.resolve();
             }
-            
             if (!optional && value >= 4) {
               var fieldValue = value;
               if (!fieldValue.includes('+')) {
