@@ -277,8 +277,9 @@ var ReactPhone = function ReactPhone(_ref) {
             var parsedValue = parsePhoneNumber(fieldValue);
             if (parsedValue && parsedValue.isPossible()) {
               return Promise.resolve();
+            } else {
+              return Promise.reject(new Error('Teléfono incorrecto. Revisa el prefijo y/o dígitos.'));
             }
-            return Promise.reject(new Error('Teléfono incorrecto. Revisa el prefijo y/o dígitos.'));
           }
           return Promise.reject(new Error('Teléfono incorrecto. Revisa el prefijo y/o dígitos.'));
         }
