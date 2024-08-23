@@ -1,6 +1,6 @@
 .cmt-statistic.ant-statistic {
   background-color: @gray-color__var-4;
-  height: 170px;
+  height: auto;
   padding: 40px 15px;
   .ant-statistic-title {
     .title {
@@ -9,6 +9,9 @@
       line-height: 39px;
       color: @text-color;
       text-align: center;
+      & :only-child {
+        margin-bottom: 0;
+      }
     }
     .sub-title {
       font-family: "MarkPro";
@@ -16,6 +19,9 @@
       line-height: 39px;
       color: @text-color;
       text-align: center;
+      & :only-child {
+        margin-bottom: 0;
+      }
     }
   }
   .ant-statistic-content {
@@ -24,5 +30,8 @@
     line-height: 38px;
     color: @text-color;
     text-align: center;
+    & :only-child {
+      margin-bottom: 0;
+    }
   }
 }
