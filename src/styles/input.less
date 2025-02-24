@@ -12,6 +12,11 @@
     border: 2px solid @text-color;
     border-right-width: 2px !important;
   }
+  &.ant-input-affix-wrapper-disabled {
+    .ant-input-disabled::placeholder {
+      color: @text-color-secondary;
+    }
+  }
 }
 
 /* Input without icon */
@@ -26,6 +31,9 @@
     border: 2px solid @text-color;
     border-right-width: 2px !important;
   }
+  &.ant-input-disabled::placeholder {
+    color: @text-color-secondary;
+  }
 }
 
 
@@ -39,6 +47,11 @@
   &:active, &:focus {
     border: 2px solid @text-color;
     border-right-width: 2px !important;
+  }
+  &.ant-input-number-disabled {
+    .ant-input-number-input {
+      color: @text-color-secondary;
+    }
   }
 }
 
@@ -69,5 +82,27 @@
   &:active, &:focus, &:focus-visible, &.ant-input-affix-wrapper-focused {
     border: 2px solid @text-color;
     border-right-width: 2px !important;
+  }
+
+  .ant-input-disabled::placeholder {
+    color: @text-color-secondary;
+  }
+}
+
+
+/* Input Group Disabled */
+
+.ant-input-group {
+  .cmt-input.ant-input {
+    &.ant-input-disabled::placeholder {
+      color: @text-color-secondary;
+    }
+  }
+  .cmt-select.ant-select {
+    &.ant-select-disabled {
+      .ant-select-selection-placeholder, .ant-select-selection-item {
+        color: @text-color-secondary;
+      }
+    }
   }
 }
